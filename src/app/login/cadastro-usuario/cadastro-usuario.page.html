@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastre-se</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <ion-list>
+    <ion-item>
+      <ion-label>Pessoa Jurídica</ion-label>
+      <ion-toggle color="danger"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <div class="dadosPessoais">
+    <h3>Informações pessoais</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label>Nome Completo:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data de Nascimento:</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" value="01/01/1900" type="date" doneText="Confirmar" cancelText="Cancelar"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefone:</ion-label>
+        <ion-input placeholder="(99)99999-9999" type="text"></ion-input>
+        <ion-label>CPF:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>E-mail:</ion-label>
+        <ion-input placeholder="exemplo@meucomida.com.br" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <h3>Informações para entrega</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label>Endereço:</ion-label>
+        <ion-input type="text"></ion-input>
+        <ion-label>N°:</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Bairro:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <h3>Informações do usuário</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label>Usuário:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Senha:</ion-label>
+        <ion-input type="password"></ion-input>
+        <ion-label>Confirmar senha:</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list class="finalizarCadastro">
+      <ion-item>
+        <ion-label>Termos de uso</ion-label>
+        <ion-checkbox slot="start" color="danger"></ion-checkbox>
+        <ion-button>Cadastrar</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>  
