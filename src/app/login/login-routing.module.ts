@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'cadastro-usuario',
     loadChildren: () => import('./cadastro-usuario/cadastro-usuario.module').then( m => m.CadastroUsuarioPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
   }
 ];
 

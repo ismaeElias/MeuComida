@@ -11,7 +11,7 @@
   <ion-list>
     <ion-item>
       <ion-label>Pessoa Jurídica</ion-label>
-      <ion-toggle color="danger"></ion-toggle>
+      <ion-checkbox slot="start" color="danger" [(ngModel)]="usuario.pessoaJuridica"></ion-checkbox>
     </ion-item>
   </ion-list>
   <div class="dadosPessoais">
@@ -19,47 +19,45 @@
     <ion-list>
       <ion-item>
         <ion-label>Nome Completo:</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Data de Nascimento:</ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY" value="01/01/1900" type="date" doneText="Confirmar" cancelText="Cancelar"></ion-datetime>
+        <ion-input type="text" [(ngModel)]="usuario.nome"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Telefone:</ion-label>
-        <ion-input placeholder="(99)99999-9999" type="text"></ion-input>
+        <ion-input placeholder="(99)99999-9999" type="text" [(ngModel)]="usuario.telefone" maxlength="14"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label>CPF:</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="usuario.CPF"  placeholder="000.000.000-00" maxlength="14"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>E-mail:</ion-label>
-        <ion-input placeholder="exemplo@meucomida.com.br" type="text"></ion-input>
+        <ion-input placeholder="exemplo@meucomida.com.br" type="text" [(ngModel)]="usuario.email"></ion-input>
       </ion-item>
     </ion-list>
     <h3>Informações para entrega</h3>
     <ion-list>
       <ion-item>
         <ion-label>Endereço:</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="usuario.endereco"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label>N°:</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-input type="number" [(ngModel)]="usuario.numResidencia"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Bairro:</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="usuario.bairro"></ion-input>
       </ion-item>
     </ion-list>
     <h3>Informações do usuário</h3>
     <ion-list>
       <ion-item>
         <ion-label>Usuário:</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="usuario.usuario"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Senha:</ion-label>
-        <ion-input type="password"></ion-input>
-        <ion-label>Confirmar senha:</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
       </ion-item>
     </ion-list>
     
@@ -67,7 +65,7 @@
       <ion-item>
         <ion-label>Termos de uso</ion-label>
         <ion-checkbox slot="start" color="danger"></ion-checkbox>
-        <ion-button>Cadastrar</ion-button>
+        <ion-button (click)="salvar()">Cadastrar</ion-button>
       </ion-item>
     </ion-list>
   </div>
