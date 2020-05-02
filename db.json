@@ -52,5 +52,27 @@
       "senha": "123",
       "id": 4
     }
+  ],
+  "restaurante": [
+    {
+      "razaoSocial": "Estação Lanches",
+      "telefoneContato": "(48) 99684-3422",
+      "detalhes": "Pizzas e Porções",
+      "segmento": "Pizzaria",
+      "nivelValor": "medio",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 1
+    },
+    {
+      "razaoSocial": "Boston",
+      "telefoneContato": "",
+      "detalhes": "Hamburgueria",
+      "segmento": "Hamburgueria",
+      "nivelValor": "baixo_2",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 2
+    }
   ]
 }

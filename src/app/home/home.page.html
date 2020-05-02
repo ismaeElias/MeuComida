@@ -1,20 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+<ion-app>
+  <ion-header >
+    <ion-toolbar color="red">
+      <ion-title class="Titulo" >Meu Comida</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <ion-content class="ion-padding" color="red">
+      <ion-button expand="block" color="tertiary" id="buttonbar" (click)="navegarRestaurante()" >Restaurantes</ion-button>
+      <ion-button expand="block" color="tertiary" id="buttonbar" (click)="navegarLogin()">Cadastro</ion-button>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar class="footer-bg" style="background-color: #3F00C2 !important;">
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>
