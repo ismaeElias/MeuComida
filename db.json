@@ -73,6 +73,16 @@
       "classificacao": 0,
       "urlImagem": "",
       "id": 2
+    },
+    {
+      "razaoSocial": "novo",
+      "telefoneContato": "",
+      "detalhes": "",
+      "segmento": "Pizzaria",
+      "nivelValor": "medio",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 3
     }
   ]
 }
