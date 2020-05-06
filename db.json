@@ -49,26 +49,6 @@
       "id": 2
     },
     {
-      "razaoSocial": "X Point ",
-      "telefoneContato": "",
-      "detalhes": "X point da vila",
-      "segmento": "Hamburgueria",
-      "nivelValor": "baixo_2",
-      "classificacao": 0,
-      "urlImagem": "",
-      "id": 3
-    },
-    {
-      "razaoSocial": "Pizzadoro",
-      "telefoneContato": "",
-      "detalhes": "Pizzaria que já foi boa",
-      "segmento": "Pizzaria",
-      "nivelValor": "medio",
-      "classificacao": 0,
-      "urlImagem": "",
-      "id": 4
-    },
-    {
       "razaoSocial": "Hamburguer bao",
       "telefoneContato": "",
       "detalhes": "Hamburgueria boa",

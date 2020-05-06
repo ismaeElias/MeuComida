@@ -21,9 +21,7 @@ export class RestaurantePage implements OnInit {
     private _alertCtrl: AlertController) {
     this.getRestaurantes();
   }
-  ionViewWillEnter() {
-    this.getRestaurantes();
-  }
+
   getRestaurantes() {
     this.restauranteService.getRestaurantes()
       .then(data => {
