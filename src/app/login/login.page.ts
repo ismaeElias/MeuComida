@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  
+  public id : number;
  
   usuario : Usuario
 
@@ -33,6 +33,7 @@ export class LoginPage implements OnInit {
                                 senha:''}
     }
   
+    
 
   ngOnInit() {
   }
@@ -45,10 +46,12 @@ export class LoginPage implements OnInit {
       
     const user = this.usuario.nome;
     const password = this.usuario.senha
+    
 
     this.usuarioService.efetuaLogin(user,password).subscribe(
       async (usuario : Usuario)=>{
         this.usuario = usuario
+        
         loading.dismiss();
           if(this.usuario[0]){
               this.navController.navigateRoot(['/home']);

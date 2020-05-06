@@ -5,52 +5,26 @@
       "pessoaJuridica": true,
       "nome": "Ismael Elias",
       "telefone": "(48)99809-4563",
-      "cpf": "101.418.789-32",
+      "CPF": "101.418.789-32",
       "email": "ismael.eliass22@gmail.com",
       "endereco": "Rua Capão da cachoeira",
       "numResidencia": 26,
-      "bairro": "Vila São Jorge",
+      "bairro": "Vila São Jorge 232",
       "usuario": "ismael",
       "senha": "123"
     },
     {
       "pessoaJuridica": true,
-      "nome": "asd",
-      "telefone": "1231",
-      "CPF": "123",
-      "email": "asd",
-      "endereco": "asd",
-      "numResidencia": 0,
-      "bairro": "asd",
+      "nome": "a",
+      "telefone": "12334",
+      "CPF": "a",
+      "email": "12334",
+      "endereco": "a",
+      "numResidencia": 1,
+      "bairro": "1a",
       "usuario": "a",
       "senha": "a",
       "id": 2
-    },
-    {
-      "pessoaJuridica": true,
-      "nome": "diana",
-      "telefone": "12312321312321",
-      "CPF": "12312312312312",
-      "email": "a",
-      "endereco": "a",
-      "numResidencia": 2,
-      "bairro": "asd",
-      "usuario": "diana",
-      "senha": "123",
-      "id": 3
-    },
-    {
-      "pessoaJuridica": true,
-      "nome": "fabiol",
-      "telefone": "12312312312312",
-      "CPF": "12312312312",
-      "email": "asdas",
-      "endereco": "asdas",
-      "numResidencia": 123,
-      "bairro": "asd",
-      "usuario": "fabio",
-      "senha": "123",
-      "id": 4
     }
   ],
   "restaurante": [
@@ -75,14 +49,24 @@
       "id": 2
     },
     {
-      "razaoSocial": "novo",
+      "razaoSocial": "Hamburguer bao",
       "telefoneContato": "",
-      "detalhes": "",
-      "segmento": "Pizzaria",
+      "detalhes": "Hamburgueria boa",
+      "segmento": "Hamburgueria",
       "nivelValor": "medio",
       "classificacao": 0,
       "urlImagem": "",
-      "id": 3
+      "id": 5
+    },
+    {
+      "razaoSocial": "Casa da pizza",
+      "telefoneContato": "",
+      "detalhes": "Vende pizza",
+      "segmento": "Pizzaria",
+      "nivelValor": "alto_1",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 6
     }
   ]
 }

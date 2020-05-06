@@ -22,10 +22,6 @@ export class RestaurantePage implements OnInit {
     this.getRestaurantes();
   }
 
-  ionViewWillEnter(){
-    this.getRestaurantes();
-  }
-
   getRestaurantes() {
     this.restauranteService.getRestaurantes()
       .then(data => {
