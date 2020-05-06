@@ -46,4 +46,8 @@ export class RestaurantePage implements OnInit {
   ngOnInit() {
   }
 
+  navDetalhes(){
+    this.router.navigate(['restaurante/detalhes'])
+  }
+
 }
