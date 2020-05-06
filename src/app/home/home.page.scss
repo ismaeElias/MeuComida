@@ -1,31 +1,58 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+.conteiner{
+  padding: 0;
   margin: 0;
+  display: inline-block;
 }
 
-#container a {
-  text-decoration: none;
+.conteiner ion-button{
+  width: 100%;
+  height: 50px;
 }
 
-ion-content ion-toolbar {
+ion-content {
   --background: translucent;
+}
+
+ion-toolbar{
+  --background:#FF3838;
+}
+
+.Titulo{
+  color:White;
+  text-align: center;
+}
+
+ion-grid{
+  --ion-grid-padding: 0;
+ 
+}
+ion-col{
+  --ion-grid-column-padding:0;
+}
+
+ion-button{
+  --background:#FF3838;
+}
+p{
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  background-color: #FF3838;
+  color: white;
+  position: relative;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#restaurante{
+  border-right: 1px solid rgb(247, 89, 89);
+}
+
+ion-icon{
+  width: 20px;
+  height: 20px;
+}
+
+img{
+  width: 100%;
 }

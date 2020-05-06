@@ -12,7 +12,7 @@ export class UsuarioService {
 
   private _usuarioLogado : Usuario;  
   usuarios : Usuario;
- id :number;
+  id :number;
   
   constructor( private httpClient : HttpClient,private loadingController : LoadingController,
     private navController : NavController) { }
@@ -25,17 +25,33 @@ export class UsuarioService {
     return this.httpClient.post<Usuario>('http://localhost:3000/usuario',usuario);
   }
 
-  salvar(usuario: Usuario) {
-      return this.adicionar(usuario);
+  atualizar(usuario: Usuario) {
+    return this.httpClient.put<Usuario>(`http://localhost:3000/usuario/${usuario.id}`, usuario);
   }
 
+  salvar(usuario: Usuario) {
+    if (usuario && usuario.id) {
+      return this.atualizar(usuario);
+    } else {
+      return this.adicionar(usuario);
+    } 
+  }
+  getUser(id: number) {
+    return this.httpClient.get<Usuario>(`http://localhost:3000/usuario/${id}`);
+  }
   
   efetuaLogin(user :String,password : String){ 
-     return this.httpClient.get<Usuario>(`http://localhost:3000/usuario?usuario=${user}&senha=${password}`);
+     return this.httpClient.get<Usuario>(`http://localhost:3000/usuario?usuario=${user}&senha=${password}`).pipe(tap(
+      (usuario: Usuario) => this._usuarioLogado = usuario)
+     )
   }
 
   obtemUsuarioLogado() {
-  return  this.id;
-   
-}
+    return this._usuarioLogado;
+  }
+
+
+  excluir(usuario: Usuario) {
+    return this.httpClient.delete(`http://localhost:3000/usuario/${usuario.id}`);
+  }
 }
