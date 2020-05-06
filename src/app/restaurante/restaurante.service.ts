@@ -37,12 +37,8 @@ export class RestauranteService {
     return this.adicionar(restaurante);
   }
 
-  efetuaLogin(user: String, password: String) {
-    return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante?restaurante=${user}&senha=${password}`);
+  excluir(restaurantes: Restaurante) {
+    return this.httpClient.delete(`http://localhost:3000/restaurante/${this.restaurantes.id}`);
   }
 
-  obtemRestauranteLogado() {
-    return this.id;
-
-  }
 }
