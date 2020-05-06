@@ -9,7 +9,7 @@
       "email": "ismael.eliass22@gmail.com",
       "endereco": "Rua Capão da cachoeira",
       "numResidencia": 26,
-      "bairro": "Vila São Jorge 2",
+      "bairro": "Vila São Jorge 232",
       "usuario": "ismael",
       "senha": "123"
     },
@@ -25,32 +25,6 @@
       "usuario": "a",
       "senha": "a",
       "id": 2
-    },
-    {
-      "pessoaJuridica": false,
-      "nome": "",
-      "telefone": "",
-      "CPF": "",
-      "email": "",
-      "endereco": "",
-      "numResidencia": 0,
-      "bairro": "",
-      "usuario": "",
-      "senha": "",
-      "id": 3
-    },
-    {
-      "pessoaJuridica": false,
-      "nome": "",
-      "telefone": "",
-      "CPF": "",
-      "email": "",
-      "endereco": "",
-      "numResidencia": 0,
-      "bairro": "",
-      "usuario": "",
-      "senha": "",
-      "id": 4
     }
   ],
   "restaurante": [
