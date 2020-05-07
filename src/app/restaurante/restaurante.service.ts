@@ -41,8 +41,13 @@ export class RestauranteService {
     return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante?restaurante=${user}&senha=${password}`);
   }
 
-  obtemRestauranteLogado() {
-    return this.id;
+  
 
+  buscaRes(id : number){
+    return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante/${id}`);
+  }
+  
+  obtemRestauranteLogado() {
+    return this._restauranteLogado;
   }
 }

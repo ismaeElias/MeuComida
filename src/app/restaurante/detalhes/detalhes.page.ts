@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
+import { RestauranteService } from '../restaurante.service';
 
 @Component({
   selector: 'app-detalhes',
@@ -7,10 +9,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./detalhes.page.scss'],
 })
 export class DetalhesPage implements OnInit {
+ 
+  restaurante : Restaurante;
 
-  constructor(private router: Router) { }
+  
+  constructor(  private restauranteService: RestauranteService,
+                private activatedRoute : ActivatedRoute,
+                private router: Router,private loadingController : LoadingController) {
+    this.restaurante = {
+      razaoSocial: '',
+      telefoneContato: '', 
+      detalhes: '', 
+      segmento: "Pizzaria", 
+      nivelValor: "medio",
+      classificacao: 0, urlImagem: ''
+    }
+   }
 
-  ngOnInit() {
+
+  async ngOnInit() {
+    const id = parseInt(this.activatedRoute.snapshot.params['id']);       
+    if(id) {
+      // Carregar as informações
+      const loading = await this.loadingController.create({message: 'Carregando'});
+      loading.present();
+      this.restauranteService.buscaRes(id).subscribe((restaurante) => {
+        this.restaurante = restaurante;
+        loading.dismiss();
+      });
+    } 
   }
   navegarComida(){
     this.router.navigate(['restaurante/detalhes/comida'])

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestauranteService } from './restaurante.service';
 import { LoadingController, AlertController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-restaurante',
@@ -16,6 +17,7 @@ export class RestaurantePage implements OnInit {
   constructor(
     private restauranteService: RestauranteService,
     public loadingController: LoadingController,
+    private activatedRoute : ActivatedRoute,
     private navController: NavController,
     private router: Router,
     private _alertCtrl: AlertController) {
@@ -46,6 +48,10 @@ export class RestaurantePage implements OnInit {
 
   navDetalhes(){
     this.router.navigate(['restaurante/detalhes'])
+    const a = this.restauranteService.busca(this.restaurantes.razaoSocial);
+    const b = this.restauranteService.obtemRestauranteLogado();
+    console.log(b);
+    
   }
 
 }
