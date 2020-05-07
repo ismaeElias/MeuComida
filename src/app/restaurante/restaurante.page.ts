@@ -48,10 +48,7 @@ export class RestaurantePage implements OnInit {
 
   navDetalhes(){
     this.router.navigate(['restaurante/detalhes'])
-    const a = this.restauranteService.busca(this.restaurantes.razaoSocial);
-    const b = this.restauranteService.obtemRestauranteLogado();
-    console.log(b);
-    
+
   }
 
 }

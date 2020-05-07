@@ -10,7 +10,6 @@ import 'rxjs/add/operator/do';
 })
 export class RestauranteService {
 
-  private _restauranteLogado: Restaurante;
   restaurantes: Restaurante;
   id: number;
 
@@ -27,6 +26,10 @@ export class RestauranteService {
           console.log(err);
         });
     });
+  }
+
+  getRest(id: number) {
+    return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante/${id}`);
   }
 
   adicionar(restaurante: Restaurante) {
@@ -47,7 +50,4 @@ export class RestauranteService {
     return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante/${id}`);
   }
   
-  obtemRestauranteLogado() {
-    return this._restauranteLogado;
-  }
 }
