@@ -19,6 +19,56 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <div class="dadosPessoais">
+    <h3>Informações do Cadastro</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label>Razão Social:</ion-label>
+        <ion-input type="text" [(ngModel)]="restaurante.razaoSocial"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Segmento</ion-label>
+        <ion-select placeholder="Selecione" [(ngModel)]="restaurante.segmento" [ngModelOptions]="{standalone: true}">
+          <ion-select-option value="Pizzaria">Pizzaria</ion-select-option>
+          <ion-select-option value="Hamburgueria">Hamburgueria</ion-select-option>
+          <ion-select-option value="Massas">Massas</ion-select-option>
+          <ion-select-option value="Japonesa">Comida Japonesa</ion-select-option>
+          <ion-select-option value="Porcoes">Porções</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Segmento</ion-label>
+        <ion-select placeholder="Selecione" [(ngModel)]="restaurante.nivelValor" [ngModelOptions]="{standalone: true}">
+          <ion-select-option value="baixo_1">R$01 - 20</ion-select-option>
+          <ion-select-option value="baixo_2">R$20 - 30</ion-select-option>
+          <ion-select-option value="medio">R$30 - 40</ion-select-option>
+          <ion-select-option value="alto_1">R$50 - 80</ion-select-option>
+          <ion-select-option value="alto_2">Maior de R$80</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Imagem</ion-label>
+        <ion-input type="text" [(ngModel)]="restaurante.urlImagem"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Detalhes:</ion-label>
+        <ion-textarea clearOnEdit="true" type="text" [(ngModel)]="restaurante.detalhes"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list class="finalizarCadastro">
+      <ion-item>
+        <ion-button (click)="salvar()">Cadastrar</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+
+
 </ion-content>
 
 <ion-button class="btn-detalhes" expand="full" (click)="navDetalhes()">

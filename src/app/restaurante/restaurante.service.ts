@@ -53,6 +53,5 @@ export class RestauranteService {
 
   obtemRestauranteAtual() {
     return this.restaurantes;
-  }
 
 }

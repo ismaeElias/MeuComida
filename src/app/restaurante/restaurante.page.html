@@ -26,7 +26,7 @@
           <ion-card-content>
             {{restaurante.detalhes}}
           </ion-card-content>
-          <ion-button class="btn-detalhes" expand="full" (click)="navDetalhes()">
+          <ion-button class="btn-detalhes" expand="full" [routerLink]="['/restaurante/detalhes', restaurante.id]">
             <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>Ver detalhes
           </ion-button>
         </ion-card>
