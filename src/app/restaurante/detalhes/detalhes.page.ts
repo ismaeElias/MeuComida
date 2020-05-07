@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
-import { RestauranteService } from '../restaurante.service';
+import { Component, OnInit ,HostBinding} from '@angular/core';
+import { RestauranteService} from 'src/app/restaurante/restaurante.service';
+import {LoadingController} from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController} from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-detalhes',
@@ -10,24 +13,22 @@ import { RestauranteService } from '../restaurante.service';
 })
 
 export class DetalhesPage implements OnInit {
- 
-  restaurante : Restaurante;
 
-  
-  constructor(  private restauranteService: RestauranteService,
-                private activatedRoute : ActivatedRoute,
-                private router: Router,private loadingController : LoadingController) {
-    this.restaurante = {
-      razaoSocial: '',
-      telefoneContato: '', 
-      detalhes: '', 
-      segmento: "Pizzaria", 
-      nivelValor: "medio",
-      classificacao: 0, urlImagem: ''
-    }
-   }
+  restaurante: Restaurante;
 
+  edit : boolean;
+  hideMe: boolean;
 
+  constructor(private restauranteService : RestauranteService,
+              private loadingController : LoadingController,
+              private activatedRoute : ActivatedRoute,
+              private navController : NavController,
+              private alertController: AlertController,
+              private toastController: ToastController,
+              private router: Router) { 
+    this.restaurante = { razaoSocial : '',telefoneContato :'',detalhes:'',segmento:'',nivelValor:'',classificacao:0,urlImagem:''},
+    this.edit = false;
+  }
 
  async ngOnInit() {
   const a = this.restauranteService.obtemRestauranteAtual();
