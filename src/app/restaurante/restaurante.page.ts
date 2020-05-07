@@ -48,7 +48,6 @@ export class RestaurantePage implements OnInit {
 
   navDetalhes(){
     this.router.navigate(['restaurante/detalhes'])
-
   }
 
 }

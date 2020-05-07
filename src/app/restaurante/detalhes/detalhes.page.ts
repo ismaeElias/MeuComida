@@ -1,10 +1,7 @@
-import { Component, OnInit ,HostBinding} from '@angular/core';
-import { RestauranteService} from 'src/app/restaurante/restaurante.service';
-import {LoadingController} from '@ionic/angular';
-import { NavController } from '@ionic/angular';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController} from '@ionic/angular';
-import { ToastController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
+import { RestauranteService } from '../restaurante.service';
 
 @Component({
   selector: 'app-detalhes',
