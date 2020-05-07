@@ -10,6 +10,7 @@ import 'rxjs/add/operator/do';
 })
 export class RestauranteService {
 
+  private _restauranteLogado: Restaurante;
   restaurantes: Restaurante;
   id: number;
 
@@ -28,10 +29,6 @@ export class RestauranteService {
     });
   }
 
-  getRest(id: number) {
-    return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante/${id}`);
-  }
-
   adicionar(restaurante: Restaurante) {
     return this.httpClient.post<Restaurante>('http://localhost:3000/restaurante', restaurante);
   }
@@ -42,17 +39,6 @@ export class RestauranteService {
 
   excluir(restaurantes: Restaurante) {
     return this.httpClient.delete(`http://localhost:3000/restaurante/${this.restaurantes.id}`);
-  }
-
-
-  acessarDetalhe(id: number){ 
-    return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante?id=${id}`).pipe(tap(
-     (id: Restaurante) => this.restaurantes = id)
-    )
- }
-
-  obtemRestauranteAtual() {
-    return this.restaurantes;
   }
 
 }

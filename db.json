@@ -11,7 +11,7 @@
       "numResidencia": 26,
       "bairro": "Vila São Jorge 232",
       "usuario": "ismael",
-      "senha": "1"
+      "senha": "123"
     },
     {
       "pessoaJuridica": true,
@@ -25,32 +25,6 @@
       "usuario": "a",
       "senha": "a",
       "id": 2
-    },
-    {
-      "pessoaJuridica": false,
-      "nome": "Diana",
-      "telefone": "ss",
-      "CPF": "ss",
-      "email": "ss",
-      "endereco": "",
-      "numResidencia": 0,
-      "bairro": "",
-      "usuario": "",
-      "senha": "",
-      "id": 3
-    },
-    {
-      "pessoaJuridica": false,
-      "nome": "Diana",
-      "telefone": "",
-      "CPF": "",
-      "email": "",
-      "endereco": "",
-      "numResidencia": 0,
-      "bairro": "",
-      "usuario": "Diana",
-      "senha": "123",
-      "id": 4
     }
   ],
   "restaurante": [

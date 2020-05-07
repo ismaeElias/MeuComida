@@ -1,4 +1,5 @@
 <ion-app>
+  
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -9,7 +10,7 @@
   </ion-header>
 
   <ion-content class="ion-padding">
-    <ion-button routerLink="./cadastro-restaurante" (click)="showLoading()" expand="block" fill="outline">
+    <ion-button routerLink="./cadastro-restaurante" (click)="showLoading()">
       <ion-icon slot="start" name="add"></ion-icon>
       Adicionar
     </ion-button>
@@ -26,8 +27,8 @@
           <ion-card-content>
             {{restaurante.detalhes}}
           </ion-card-content>
-          <ion-button class="btn-detalhes" expand="full" (click)="navDetalhes()">
-            <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>Ver detalhes
+          <ion-button id="btn-Editar" expand="slot" fill="outline" (click)="editar()">
+            <ion-icon name="build-outline" slot="end"></ion-icon>
           </ion-button>
         </ion-card>
       </ion-item>
