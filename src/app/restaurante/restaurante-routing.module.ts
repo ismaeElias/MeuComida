@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'cadastro-restaurante',
     loadChildren: () => import('./cadastro-restaurante/cadastro-restaurante.module').then( m => m.CadastroRestaurantePageModule)
+  },
+  {
+    path: 'detalhes',
+    loadChildren: () => import('./detalhes/detalhes.module').then( m => m.DetalhesPageModule)
   }
 ];
 

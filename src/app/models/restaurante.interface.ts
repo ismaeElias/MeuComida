@@ -1,6 +1,6 @@
 interface Restaurante{
     id? : number;
-    razaoSocial: String;
+    razaoSocial?: String;
     telefoneContato: String;
     detalhes: String;
     segmento: String;

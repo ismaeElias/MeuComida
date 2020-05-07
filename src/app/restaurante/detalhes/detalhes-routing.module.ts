@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { DetalhesPage } from './detalhes.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: DetalhesPage
+  },
+  {
+    path: 'comida',
+    loadChildren: () => import('./comida/comida.module').then( m => m.ComidaPageModule)
+  },
+  {
+    path: 'avaliacao',
+    loadChildren: () => import('./avaliacao/avaliacao.module').then( m => m.AvaliacaoPageModule)
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class DetalhesPageRoutingModule {}
