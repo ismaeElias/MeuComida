@@ -7,7 +7,17 @@ const routes: Routes = [
   {
     path: '',
     component: AvaliacaoPage
+  },
+  {
+    path: 'cadastro-avaliacao',
+    loadChildren: () => import('./cadastro-avaliacao/cadastro-avaliacao.module').then( m => m.CadastroAvaliacaoPageModule)
+  },
+  {
+    path: 'cadastro-avaliacao/:id',
+    loadChildren: () => import('./cadastro-avaliacao/cadastro-avaliacao.module').then( m => m.CadastroAvaliacaoPageModule)
   }
+  
+
 ];
 
 @NgModule({

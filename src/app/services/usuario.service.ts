@@ -14,8 +14,9 @@ export class UsuarioService {
   usuarios : Usuario;
   id :number;
   
-  constructor( private httpClient : HttpClient,private loadingController : LoadingController,
-    private navController : NavController) { }
+  constructor( private httpClient : HttpClient,
+               private loadingController : LoadingController,
+               private navController : NavController) { }
 
   getUsuario() {
     return this.httpClient.get<Usuario[]>('http://localhost:3000/usuario');
@@ -36,6 +37,7 @@ export class UsuarioService {
       return this.adicionar(usuario);
     } 
   }
+  
   getUser(id: number) {
     return this.httpClient.get<Usuario>(`http://localhost:3000/usuario/${id}`);
   }

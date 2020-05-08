@@ -68,5 +68,21 @@
       "urlImagem": "",
       "id": 6
     }
+  ],
+  "avaliacao":[
+    {
+      "id:":1,
+     "restaurante":"Estação Lanches",
+      "nome": "Ismael Elias",
+      "comentario": "Este restaurante é muito bom!, a pizza nem se fala",
+      "nota" : 5
+    },
+    {
+      "id:":2,
+     "restaurante":"Boston",
+      "nome": "Ismael Elias",
+      "comentario": "Este restaurante é muito bom!, a pizza nem se fala",
+      "nota" : 5
+    }
   ]
 }
