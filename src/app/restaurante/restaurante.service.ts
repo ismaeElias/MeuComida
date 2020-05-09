@@ -34,20 +34,23 @@ export class RestauranteService {
   }
 
   salvar(restaurante: Restaurante) {
-    return this.adicionar(restaurante);
+    if (restaurante && restaurante.id) {
+      return this.atualizar(restaurante);
+    } else {
+      return this.adicionar(restaurante);
+    } 
   }
 
-  efetuaLogin(user: String, password: String) {
-    return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante?restaurante=${user}&senha=${password}`);
+  atualizar(restaurante: Restaurante) {
+    return this.httpClient.put<Usuario>(`http://localhost:3000/restaurante/${restaurante.id}`, restaurante);
   }
-
-  
 
   buscaRes(id : number){
     return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante/${id}`);
   }
-  
-  obtemRestauranteLogado() {
-    return this._restauranteLogado;
+
+  excluir(restaurante: Restaurante) {
+    return this.httpClient.delete(`http://localhost:3000/restaurante/${restaurante.id}`);
   }
+
 }

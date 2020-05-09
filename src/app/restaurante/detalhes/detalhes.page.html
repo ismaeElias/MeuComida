@@ -20,17 +20,19 @@
     </ion-row>
   </ion-grid>
 
+
+
   <div class="dadosPessoais">
     <h3>Informações do Cadastro</h3>
     <ion-list>
       <ion-item>
         <ion-label>Razão Social:</ion-label>
-        <ion-input type="text" [(ngModel)]="restaurante.razaoSocial"></ion-input>
+        <ion-input type="text" [(ngModel)]="restaurante.razaoSocial" disabled="true"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Segmento</ion-label>
-        <ion-select placeholder="Selecione" [(ngModel)]="restaurante.segmento" [ngModelOptions]="{standalone: true}">
+        <ion-select placeholder="Selecione" [(ngModel)]="restaurante.segmento" [ngModelOptions]="{standalone: true}" [disabled]="!edit">
           <ion-select-option value="Pizzaria">Pizzaria</ion-select-option>
           <ion-select-option value="Hamburgueria">Hamburgueria</ion-select-option>
           <ion-select-option value="Massas">Massas</ion-select-option>
@@ -40,8 +42,8 @@
       </ion-item>
 
       <ion-item>
-        <ion-label>Segmento</ion-label>
-        <ion-select placeholder="Selecione" [(ngModel)]="restaurante.nivelValor" [ngModelOptions]="{standalone: true}">
+        <ion-label>Valor</ion-label>
+        <ion-select placeholder="Selecione" [(ngModel)]="restaurante.nivelValor" [ngModelOptions]="{standalone: true}" [disabled]="!edit">
           <ion-select-option value="baixo_1">R$01 - 20</ion-select-option>
           <ion-select-option value="baixo_2">R$20 - 30</ion-select-option>
           <ion-select-option value="medio">R$30 - 40</ion-select-option>
@@ -52,21 +54,31 @@
 
       <ion-item>
         <ion-label>Imagem</ion-label>
-        <ion-input type="text" [(ngModel)]="restaurante.urlImagem"></ion-input>
+        <ion-input type="text" [(ngModel)]="restaurante.urlImagem" [disabled]="!edit"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Detalhes:</ion-label>
-        <ion-textarea clearOnEdit="true" type="text" [(ngModel)]="restaurante.detalhes"></ion-textarea>
+        <ion-textarea clearOnEdit="true" type="text" [(ngModel)]="restaurante.detalhes" [disabled]="!edit"></ion-textarea>
       </ion-item>
     </ion-list>
     
-    <ion-list class="finalizarCadastro">
-      <ion-item>
-        <ion-button (click)="salvar()">Cadastrar</ion-button>
-      </ion-item>
-    </ion-list>
+    
+    <ion-button *ngIf="hideMe" (click)="confirmarExclusao(restaurante)">
+      <ion-icon name="close-outline"></ion-icon>Excluir.
+    </ion-button>
+    
+
+    <ion-button *ngIf="!hideMe" id="btn-Editar" expand="block" fill="outline" (click)="editar()">
+      <ion-icon name="build-outline" slot="end"></ion-icon>Editar Restaurante
+    </ion-button>
+
+    <ion-button id="btn-EditSave" (click)="salvarEdicao()" *ngIf="hideMe">
+      <ion-icon name="checkmark-done-outline" slot="end"></ion-icon>Salvar Edição
+    </ion-button>
   </div>
+
+  
 
 
 </ion-content>
