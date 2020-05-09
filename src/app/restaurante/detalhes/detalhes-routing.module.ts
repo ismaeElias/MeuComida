@@ -15,7 +15,12 @@ const routes: Routes = [
   {
     path: 'avaliacao',
     loadChildren: () => import('./avaliacao/avaliacao.module').then( m => m.AvaliacaoPageModule)
+  },
+  {
+    path: 'avaliacao/:id',
+    loadChildren: () => import('./avaliacao/avaliacao.module').then( m => m.AvaliacaoPageModule)
   }
+  
 ];
 
 @NgModule({

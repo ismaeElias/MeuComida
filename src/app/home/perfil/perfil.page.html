@@ -10,7 +10,7 @@
 <ion-content [fullscreen]="true">
   <p id="infoP">Algumas Informações não são editáveis por políticas do aplicativo.</p>
 
-  <ion-button id="btn-Editar" expand="block" fill="outline" (click)="editar()">
+  <ion-button id="btn-Editar" expand="block" fill="outline" *ngIf="!hideMe" (click)="editar()">
     <ion-icon name="build-outline" slot="end"></ion-icon>Editar Perfil
   </ion-button>
 

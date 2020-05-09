@@ -14,7 +14,7 @@
       <ion-col  (click)="navegarComida()">
         <p id="comida"><ion-icon name="fast-food"></ion-icon></p>
       </ion-col>
-      <ion-col  (click)="navegarAvalicao()"> 
+      <ion-col  [routerLink]="['/restaurante/detalhes/avaliacao', restaurante.id]"> 
         <p><ion-icon name="create"></ion-icon></p>
       </ion-col>
     </ion-row>

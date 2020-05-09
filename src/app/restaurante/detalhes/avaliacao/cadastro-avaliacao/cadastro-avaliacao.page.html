@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="avaliacao"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="hideMe">Cadastre sua Avaliação</ion-title>
+    <ion-title *ngIf="hideDt">Detalhe da Avaliação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="lista">
+    <ion-item>
+      <ion-label>Nome:</ion-label>
+      <ion-input type="text" [(ngModel)]="avaliacao.nome" disabled="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Restaurante:</ion-label>
+      <ion-input type="text" [(ngModel)]="avaliacao.restaurante" disabled="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Comentário:</ion-label>
+      <ion-textarea placeholder="Descreva oque achou sobre o restaurante :D" [(ngModel)]="avaliacao.comentario" [disabled]="!edit"></ion-textarea>
+    </ion-item>
+    <h2>Deixe sua nota:</h2>
+    <ion-item class="cd-item">
+      <ion-range  min="0" max="5 " step="1" snaps="true"  pin="true" color="danger" [(ngModel)]="avaliacao.nota" [disabled]="!edit">
+        <ion-icon size="small" slot="start" name="sad"></ion-icon>
+        <ion-icon slot="end" name="happy"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-button id="btn-EditSave"  *ngIf="hideEdit" (click)="editar()">
+    <ion-icon name="checkmark-done-outline" slot="end"></ion-icon>Editar
+  </ion-button>
+
+  <a  *ngIf="hideEditIniciado" (click)="confirmarExclusao(avaliacao)">Excluir comentário.</a>
+    
+  <ion-button id="btn-EditSave" (click)="salvarEdit()" *ngIf="hideEditIniciado">
+    <ion-icon name="checkmark-done-outline" slot="end"></ion-icon>Salvar Edição
+  </ion-button>
+
+  <ion-button id="btn-EditSave" (click)="salvar()" *ngIf="hideMe"> 
+    <ion-icon name="checkmark-done-outline" slot="end"></ion-icon>Cadastrar
+  </ion-button>
+</ion-content>
