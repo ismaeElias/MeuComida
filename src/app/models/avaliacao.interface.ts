@@ -1,8 +1,8 @@
-interface Avaliacao{
-    
-    id?:number;
+interface Avaliacao{   
+    id? :number;
     restaurante: String;
     nome:String;
+    usuario: String;
     comentario : String;
     nota: number;
 }

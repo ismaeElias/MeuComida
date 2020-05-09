@@ -16,7 +16,7 @@ export class AvaliacaoPage implements OnInit {
   restaurante : Restaurante;
   
   avaliacao : Avaliacao[]
-
+  
   constructor(private activatedRoute : ActivatedRoute,
               private usuarioService : UsuarioService,
               private restauranteService: RestauranteService,
@@ -34,8 +34,11 @@ export class AvaliacaoPage implements OnInit {
               }
              }
 
+  ionViewWillEnter() {
+    this.ngOnInit()
+  }
+
   async ngOnInit() {
-    
     const id = parseInt(this.activatedRoute.snapshot.params['id']);
     this.restauranteService.buscaRes(id).subscribe((data)=>{
       this.restaurante = data

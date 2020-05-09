@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'cadastro-avaliacao/:id',
     loadChildren: () => import('./cadastro-avaliacao/cadastro-avaliacao.module').then( m => m.CadastroAvaliacaoPageModule)
-  }
+  } 
   
 
 ];

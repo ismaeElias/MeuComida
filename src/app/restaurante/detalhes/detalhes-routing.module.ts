@@ -20,6 +20,7 @@ const routes: Routes = [
     path: 'avaliacao/:id',
     loadChildren: () => import('./avaliacao/avaliacao.module').then( m => m.AvaliacaoPageModule)
   }
+  
 ];
 
 @NgModule({

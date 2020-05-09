@@ -10,6 +10,8 @@ import { filter, map, tap } from 'rxjs/operators';
 })
 export class AvaliacaoService {
 
+  avaliacao : Avaliacao;
+  id :number;
 
   constructor(private httpClient : HttpClient,
               private loadingController : LoadingController,
@@ -25,6 +27,28 @@ export class AvaliacaoService {
 
   getAvaliacaoRestaurante(res: String){
     return this.httpClient.get<Avaliacao[]>(`http://localhost:3000/avaliacao?restaurante=${res}`);
+
+    
+  }
+
+  adicionar(avaliacao : Avaliacao){
+    return this.httpClient.post<Avaliacao>('http://localhost:3000/avaliacao', avaliacao);
+  }
+
+  atualizar(avaliacao: Avaliacao) {
+    return this.httpClient.put<Avaliacao>(`http://localhost:3000/avaliacao/${avaliacao.id}`, avaliacao);
+  }
+
+  salvar(avaliacao : Avaliacao){
+    if (avaliacao && avaliacao.id) {
+      return this.atualizar(avaliacao);
+    } else {
+      return this.adicionar(avaliacao);
+    } 
+  }
+
+  excluir(avaliacao: Avaliacao) {
+    return this.httpClient.delete(`http://localhost:3000/avaliacao/${avaliacao.id}`);
   }
 
 }

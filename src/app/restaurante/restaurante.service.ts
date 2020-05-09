@@ -44,7 +44,9 @@ export class RestauranteService {
   
 
   buscaRes(id : number){
-    return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante/${id}`);
+    return this.httpClient.get<Restaurante>(`http://localhost:3000/restaurante/${id}`).pipe(tap(
+      (restaurante: Restaurante) => this._restauranteLogado = restaurante)
+     )
   }
   
   obtemRestauranteLogado() {
