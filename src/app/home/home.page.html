@@ -11,6 +11,9 @@
         <ion-col  (click)="navegarRestaurante()">
           <p id="restaurante"><ion-icon name="restaurant"></ion-icon></p>
         </ion-col>
+        <ion-col  >
+          <p id="restaurante"><ion-icon name="cart" id="cart"></ion-icon></p>
+        </ion-col>
         <ion-col  (click)="navegarLogin()"> 
           <p><ion-icon name="person"></ion-icon></p>
         </ion-col>
@@ -34,6 +37,37 @@
       </ion-card-content>
       <ion-button (click)="navegarRestaurante()">Acesse</ion-button>
     </ion-card>
+    <div class="cards">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-card-header>
+                <img src="../../assets/images/bannerHambugur.jpg" alt="Menu">
+              </ion-card-header>
+              <ion-card-content>
+                Clique no botão abaixo para encontrar os melhores hamburguers ;D
+              </ion-card-content>
+              <ion-button (click)="navegarRestaurante()">Nagevar</ion-button>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+              <ion-card-header>
+                <img src="../../assets/images/bannerPizza.jpg" alt="Menu">
+              </ion-card-header>
+              <ion-card-content>
+                Clique no botão abaixo para encontrar as melhores pizzarias :D
+              </ion-card-content>
+              <ion-button (click)="navegarRestaurante()">Nagevar</ion-button>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      
+    </div>
+    
 
   </ion-content>
 </ion-app>

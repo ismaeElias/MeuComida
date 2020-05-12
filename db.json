@@ -51,6 +51,19 @@
       "usuario": "diana",
       "senha": "1",
       "id": 4
+    },
+    {
+      "pessoaJuridica": false,
+      "nome": "fabio",
+      "telefone": "1",
+      "CPF": "1",
+      "email": "a",
+      "endereco": "1",
+      "numResidencia": 1,
+      "bairro": "as",
+      "usuario": "fabio",
+      "senha": "1",
+      "id": 5
     }
   ],
   "restaurante": [
@@ -59,50 +72,98 @@
       "telefoneContato": "(48) 99684-3422",
       "detalhes": "Pizzas e Porções",
       "segmento": "Pizzaria",
-      "nivelValor": "medio",
+      "nivelValor": "alto_2",
       "classificacao": 0,
       "urlImagem": "",
       "id": 1
     },
     {
-      "pessoaJuridica": false,
-      "nome": "",
-      "telefone": "",
-      "CPF": "",
-      "email": "",
-      "endereco": "",
-      "numResidencia": 0,
-      "bairro": "",
-      "usuario": "diana",
-      "senha": "1",
+      "razaoSocial": "Boston",
+      "telefoneContato": "",
+      "detalhes": "Hamburgueria",
+      "segmento": "Hamburgueria",
+      "nivelValor": "baixo_2",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 2
+    },
+    {
+      "razaoSocial": "Hamburguer bao",
+      "telefoneContato": "",
+      "detalhes": "Hamburgueria boa",
+      "segmento": "Hamburgueria",
+      "nivelValor": "medio",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 5
+    },
+    {
+      "razaoSocial": "Casa da pizza",
+      "telefoneContato": "",
+      "detalhes": "Vende pizza",
+      "segmento": "Pizzaria",
+      "nivelValor": "alto_1",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 6
+    }
+  ],
+  "avaliacao": [
+    {
+      "restaurante": "Boston",
+      "nome": "Ismael Elias",
+      "usuario": "ismael",
+      "comentario": "Este restaurante é muito bom!, a pizza nem se fala",
+      "nota": 5,
+      "id": 2
+    },
+    {
+      "restaurante": "Estação Lanches",
+      "nome": "fernando",
+      "usuario": "fernando",
+      "comentario": "Este restaurante é muito bom!, a pizza nem se fala",
+      "nota": 5,
       "id": 3
     },
     {
-      "pessoaJuridica": false,
-      "nome": "",
-      "telefone": "",
-      "CPF": "",
-      "email": "",
-      "endereco": "",
-      "numResidencia": 0,
-      "bairro": "",
-      "usuario": "1",
-      "senha": "1",
-      "id": 4
+      "nome": "a",
+      "usuario": "a",
+      "restaurante": "Estação Lanches",
+      "comentario": "asdas",
+      "nota": 3,
+      "id": 6
     },
     {
-      "pessoaJuridica": false,
-      "nome": "",
-      "telefone": "",
-      "CPF": "",
-      "email": "",
-      "endereco": "",
-      "numResidencia": 0,
-      "bairro": "",
-      "usuario": "",
-      "senha": "",
-      "id": 5
+      "nome": "Ismael Elias",
+      "usuario": "ismael",
+      "restaurante": "Boston",
+      "comentario": "Avaliacao 2",
+      "nota": 4,
+      "id": 8
+    },
+    {
+      "nome": "diana",
+      "usuario": "diana",
+      "restaurante": "Estação Lanches",
+      "comentario": "d",
+      "nota": 4,
+      "id": 9
+    },
+    {
+      "nome": "Ismael Elias",
+      "usuario": "ismael",
+      "restaurante": "Estação Lanches",
+      "comentario": "TESTEEEE",
+      "nota": 5,
+      "id": 10
+    },
+    {
+      "nome": "fabio",
+      "usuario": "fabio",
+      "restaurante": "Estação Lanches",
+      "comentario": "bom",
+      "nota": 2,
+      "id": 11
     }
-  ],
-  "restaurante": []
+  ]
 }

@@ -56,3 +56,22 @@ ion-icon{
 img{
   width: 100%;
 }
+
+#cart{
+  width: 25px;
+  height: 25px;
+}
+
+.cards{
+  text-align: center;
+}
+
+.cards ion-card{
+  width: 160px;
+  border: 1px solid #FF3838;
+}
+
+.cards ion-button{
+  width: 130px;
+  height: 40px;
+}

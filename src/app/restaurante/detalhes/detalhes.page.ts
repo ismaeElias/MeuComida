@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoadingController, NavController, AlertController, ToastController } from '@ionic/angular';
 import { RestauranteService } from '../restaurante.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-detalhes',
@@ -15,14 +16,18 @@ export class DetalhesPage implements OnInit {
   
   edit : boolean;
   hideMe: boolean;
-
+  infodet:boolean;
+  infocad : boolean;
+  editButton:boolean;
   
   constructor(  private restauranteService: RestauranteService,
                 private activatedRoute : ActivatedRoute,
-                private router: Router,private loadingController : LoadingController,
+                private router: Router,
+                private loadingController : LoadingController,
                 private navController : NavController,
                 private alertController: AlertController,
-                private toastController : ToastController) {
+                private toastController : ToastController,
+                private usuarioService : UsuarioService) {
     this.restaurante = {
       razaoSocial: '',
       telefoneContato: '', 
@@ -43,9 +48,17 @@ export class DetalhesPage implements OnInit {
       loading.present();
       this.restauranteService.buscaRes(id).subscribe((restaurante) => {
         this.restaurante = restaurante;
+        this.infodet = true;
+        this.infocad = false;
         loading.dismiss();
       });
     } 
+    
+    const usuario = this.usuarioService.obtemUsuarioLogado();
+    this.editButton = usuario[0].pessoaJuridica;
+
+    this.infodet = false;
+    this.infocad = true;
   }
   navegarComida(){
     this.router.navigate(['restaurante/detalhes/comida'])
@@ -59,6 +72,7 @@ export class DetalhesPage implements OnInit {
   editar(){
     this.edit = true;
     this.hideMe = true;
+    this.editButton = false;
   }
 
   async salvarEdicao(){

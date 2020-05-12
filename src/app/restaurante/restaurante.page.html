@@ -9,7 +9,7 @@
   </ion-header>
 
   <ion-content class="ion-padding">
-    <ion-button routerLink="./cadastro-restaurante" (click)="showLoading()" expand="block" fill="outline">
+    <ion-button routerLink="./cadastro-restaurante" (click)="showLoading()" expand="block" fill="outline" *ngIf="addButton">
       <ion-icon slot="start" name="add"></ion-icon>
       Adicionar
     </ion-button>

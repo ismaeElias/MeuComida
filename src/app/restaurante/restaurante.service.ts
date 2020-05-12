@@ -42,7 +42,7 @@ export class RestauranteService {
   }
 
   atualizar(restaurante: Restaurante) {
-    return this.httpClient.put<Usuario>(`http://localhost:3000/restaurante/${restaurante.id}`, restaurante);
+    return this.httpClient.put<Restaurante>(`http://localhost:3000/restaurante/${restaurante.id}`, restaurante);
   }
 
   buscaRes(id : number){
@@ -53,6 +53,9 @@ export class RestauranteService {
 
   excluir(restaurante: Restaurante) {
     return this.httpClient.delete(`http://localhost:3000/restaurante/${restaurante.id}`);
+  }
+  obtemRestauranteLogado() {
+    return this._restauranteLogado;
   }
 
 }

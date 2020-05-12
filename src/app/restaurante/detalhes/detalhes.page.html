@@ -23,7 +23,8 @@
 
 
   <div class="dadosPessoais">
-    <h3>Informações do Cadastro</h3>
+    <h3 *ngIf="infocad">Informações do Cadastro</h3>
+    <h3 *ngIf="infodet">Detalhes do restaurante</h3>
     <ion-list>
       <ion-item>
         <ion-label>Razão Social:</ion-label>
@@ -64,21 +65,18 @@
     </ion-list>
     
     
-    <ion-button *ngIf="hideMe" (click)="confirmarExclusao(restaurante)">
+    <ion-button *ngIf="hideMe" (click)="confirmarExclusao(restaurante)" id="btn-excluir">
       <ion-icon name="close-outline"></ion-icon>Excluir.
     </ion-button>
     
-
-    <ion-button *ngIf="!hideMe" id="btn-Editar" expand="block" fill="outline" (click)="editar()">
-      <ion-icon name="build-outline" slot="end"></ion-icon>Editar Restaurante
-    </ion-button>
-
     <ion-button id="btn-EditSave" (click)="salvarEdicao()" *ngIf="hideMe">
       <ion-icon name="checkmark-done-outline" slot="end"></ion-icon>Salvar Edição
     </ion-button>
+
+    <ion-button *ngIf="editButton" id="btn-Editar" expand="block" fill="outline" (click)="editar()">
+      <ion-icon name="build-outline" slot="end"></ion-icon>Editar Restaurante
+    </ion-button>
+
   </div>
-
-  
-
 
 </ion-content>
