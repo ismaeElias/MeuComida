@@ -12,31 +12,45 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
     
-    usuario: Usuario[];
+    usuario: Usuario;
 
   constructor(private usuarioService : UsuarioService,
     private loadingController : LoadingController,
     private activatedRoute : ActivatedRoute,
     private navController : NavController,
-    private router: Router) {}
+    private router: Router) {
+      this.usuario = {pessoaJuridica: false, nome : '',telefone :'',CPF:'',email:'',endereco:'',numResidencia : 0,bairro:'',usuario:'',senha:''}
+    }
 
   navegarRestaurante() {
     this.navController.navigateForward('restaurante');
   }
   
+  navegarPedido() {
+    this.router.navigate(['pedido'])
+  } 
+
   navegarLogin() {
     this.router.navigate(['home/perfil'])
   } 
   
-  async listar() {
-    const loading = await this.loadingController.create({
-      message: 'Carregando'
-    });
-    loading.present();
-    // this.autores = this.autorService.getAutores();
-    this.usuarioService.getUsuario().subscribe((data) => {
-      this.usuario = data;
-      loading.dismiss();
-    });
+  ionViewWillEnter() {
+    this.ngOnInit();
   }
+  
+  async ngOnInit(){
+    const id_user = this.usuarioService.obtemUsuarioLogado();
+    const id = id_user[0].id;  
+    if(id) {
+      // Carregar as informações
+      const loading = await this.loadingController.create({message: 'Carregando', duration: 2000});
+      loading.present();
+      this.usuarioService.getUser(id).subscribe((user) => {
+        this.usuario = user;
+        loading.dismiss();
+      });
+    } 
+  }
+  
+  
 }

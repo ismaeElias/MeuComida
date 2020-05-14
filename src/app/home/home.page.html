@@ -6,12 +6,14 @@
   </ion-header>
 
   <ion-content class="conteiner">
+
+    
     <ion-grid>
       <ion-row>
         <ion-col  (click)="navegarRestaurante()">
           <p id="restaurante"><ion-icon name="restaurant"></ion-icon></p>
         </ion-col>
-        <ion-col  >
+        <ion-col  [routerLink]="['pedido/', usuario.id]">
           <p id="restaurante"><ion-icon name="cart" id="cart"></ion-icon></p>
         </ion-col>
         <ion-col  (click)="navegarLogin()"> 
@@ -19,8 +21,8 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    
-    <ion-card>
+
+    <ion-card class="card-menu">
       <ion-card-header>
         <img src="../../assets/images/MenuCard.jpg" alt="Menu">
         <ion-card-subtitle>Entra em todas as cidades sul Catarinenses</ion-card-subtitle>

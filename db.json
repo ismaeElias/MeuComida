@@ -64,6 +64,19 @@
       "usuario": "fabio",
       "senha": "1",
       "id": 5
+    },
+    {
+      "pessoaJuridica": true,
+      "nome": "artur",
+      "telefone": "123",
+      "CPF": "1",
+      "email": "a",
+      "endereco": "1",
+      "numResidencia": 1,
+      "bairro": "asd",
+      "usuario": "artur",
+      "senha": "1",
+      "id": 6
     }
   ],
   "restaurante": [
@@ -165,5 +178,32 @@
       "nota": 2,
       "id": 11
     }
+  ],
+  "pedidos" : [
+    {
+      "id": 1,
+      "usuario":"ismael",
+      "restaurante" : "Boston",
+      "comida" : "hamburguer",
+      "valor": 42.3,
+      "qtd" : 1
+    },
+    {
+      "id": 1,
+      "usuario":"ismael",
+      "restaurante" : "Boston",
+      "comida" : "hamburguer",
+      "valor": 42.3,
+      "qtd" : 1
+    },
+    {
+      "id": 1,
+      "usuario":"ismael",
+      "restaurante" : "Boston",
+      "comida" : "hamburguer",
+      "valor": 42.3,
+      "qtd" : 1
+    }
   ]
+  
 }

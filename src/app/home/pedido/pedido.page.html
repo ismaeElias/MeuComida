@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item class="av-item" *ngFor="let ped of pedido">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="danger">
+          <h2>{{ped.comida}}</h2> 
+        </ion-text>
+        <p>{{ped.restaurante}}</p>
+        <ion-text class="text-comentario">
+          <p>{{ped.valor |  currency:'BRL'}}</p>
+        </ion-text>
+      </ion-label>
+    </ion-item> 
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <p>Total: {{total | currency:'BRL'}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

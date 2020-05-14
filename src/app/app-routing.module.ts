@@ -13,6 +13,15 @@ const routes: Routes = [
     loadChildren: () => import('./home/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   { path: 'home/perfil/:id', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  {
+    path: 'pedido',
+    loadChildren: () => import('./home/pedido/pedido.module').then( m => m.PedidoPageModule)
+  },
+  {
+    path: 'home/pedido/:id',
+    loadChildren: () => import('./home/pedido/pedido.module').then( m => m.PedidoPageModule)
+  }
+
 ];
 
 @NgModule({
