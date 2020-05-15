@@ -3,6 +3,7 @@ interface Pedidos {
     usuario: String;
     restaurante: String;
     comida: String;
+    total: number;
     valor: number;
     qtd : number;
 }

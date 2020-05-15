@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { LoadingController, NavController, AlertController, ToastController } from '@ionic/angular';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { log } from 'util';
 
@@ -15,7 +15,7 @@ export class PedidoPage implements OnInit {
   usuario : Usuario;
   pedido : Pedidos[];
   total : number;
-  
+  ped : Pedidos;
 
   constructor(private usuarioService : UsuarioService,
     private loadingController : LoadingController,
@@ -23,7 +23,10 @@ export class PedidoPage implements OnInit {
     private navController : NavController,
     private alertController: AlertController,
     private toastController: ToastController,
-    private pedidosService : PedidosService) { }
+    private pedidosService : PedidosService,
+    private router: Router) { 
+      this.ped = {usuario :'',restaurante:'',comida:'',valor :0,qtd :0,total:0};
+    }
 
   async ngOnInit() {
     const id = parseInt(this.activatedRoute.snapshot.params['id']);
@@ -35,8 +38,8 @@ export class PedidoPage implements OnInit {
         this.usuario = user;
         this.pedidosService.getPedidos(this.usuario.usuario).subscribe((pedidos)=>{
           this.pedido = pedidos
-          const valor = this.pedido.reduce((prev, elem)=> prev + elem.valor,0);
-          this.total = parseInt(valor.toFixed(2));
+          const valor = this.pedido.reduce((prev, elem)=> prev + elem.total,0);
+          this.total = valor;
           
         })
         loading.dismiss();
@@ -44,5 +47,35 @@ export class PedidoPage implements OnInit {
     } 
     
   }
-  
+
+  ionViewWillEnter() {
+    this.ngOnInit()
+  }
+
+  async confirmarExclusao(ped: Pedidos) {
+    let alerta = await this.alertController.create({
+      header: 'Confirmação de exclusão',
+      message: `Deseja excluir o pedido do ${ped.comida}?`,
+      buttons: [{
+        text: 'SIM',
+        handler: () => {
+          this.excluir(ped);
+        }
+      }, {
+        text: 'NÃO'
+      }]
+    });
+    alerta.present();
+  }
+
+
+  private async excluir(ped: Pedidos) {
+    const busyLoader = await this.loadingController.create({ message: 'Excluíndo...' });
+    busyLoader.present();
+    
+    this.pedidosService.excluir(ped).subscribe(() => {
+      this.ngOnInit();
+      busyLoader.dismiss();
+    });
+  }
 }

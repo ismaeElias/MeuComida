@@ -101,7 +101,7 @@ export class CadastroAvaliacaoPage implements OnInit {
     loading.present();
     this.avalicaoService.salvar(this.avaliacao).subscribe(() => { 
       const buscaRes = this.restauranteService.obtemRestauranteLogado();
-      this.router.navigate(['restaurante/detalhes/avaliacao/',buscaRes]);
+      this.router.navigate(['restaurante/detalhes/avaliacao/',buscaRes.id]);
       this.avaliacao.comentario='';
       this.avaliacao.nota = 0;
       loading.dismiss() 
@@ -122,7 +122,7 @@ export class CadastroAvaliacaoPage implements OnInit {
     loading.present();
     this.avalicaoService.salvar(this.avaliacao).subscribe(() => { 
       const buscaRes = this.restauranteService.obtemRestauranteLogado();
-      this.router.navigate(['restaurante/detalhes/avaliacao/',buscaRes]);
+      this.router.navigate(['restaurante/detalhes/avaliacao/',buscaRes.id]);
       this.hideEditIniciado = false;
       this.hideEdit = true;
       this.edit = false;

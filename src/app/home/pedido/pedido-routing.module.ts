@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: PedidoPage
+  },
+  {
+    path: 'detalhe-pedido',
+    loadChildren: () => import('./detalhe-pedido/detalhe-pedido.module').then( m => m.DetalhePedidoPageModule)
+  },
+  {
+    path: 'detalhe-pedido/:id',
+    loadChildren: () => import('./detalhe-pedido/detalhe-pedido.module').then( m => m.DetalhePedidoPageModule)
   }
 ];
 

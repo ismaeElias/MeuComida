@@ -166,7 +166,7 @@
       "nome": "Ismael Elias",
       "usuario": "ismael",
       "restaurante": "Estação Lanches",
-      "comentario": "TESTEEEE",
+      "comentario": "É BOM",
       "nota": 5,
       "id": 10
     },
@@ -177,33 +177,65 @@
       "comentario": "bom",
       "nota": 2,
       "id": 11
+    },
+    {
+      "nome": "Ismael Elias",
+      "usuario": "ismael",
+      "restaurante": "Estação Lanches",
+      "comentario": "bom mesmo",
+      "nota": 5,
+      "id": 12
+    },
+    {
+      "nome": "Ismael Elias",
+      "usuario": "ismael",
+      "restaurante": "Estação Lanches",
+      "comentario": "bao",
+      "nota": 2,
+      "id": 13
+    },
+    {
+      "nome": "Ismael Elias",
+      "usuario": "ismael",
+      "restaurante": "Estação Lanches",
+      "comentario": "bom",
+      "nota": 3,
+      "id": 14
+    },
+    {
+      "nome": "Ismael Elias",
+      "usuario": "ismael",
+      "restaurante": "Boston",
+      "comentario": "teste",
+      "nota": 3,
+      "id": 15
+    },
+    {
+      "nome": "Ismael Elias",
+      "usuario": "ismael",
+      "restaurante": "Hamburguer bao",
+      "comentario": "bao",
+      "nota": 4,
+      "id": 16
+    },
+    {
+      "nome": "Ismael Elias",
+      "usuario": "ismael",
+      "restaurante": "Hamburguer bao",
+      "comentario": "gostei",
+      "nota": 3,
+      "id": 17
     }
   ],
-  "pedidos" : [
+  "pedidos": [
     {
-      "id": 1,
-      "usuario":"ismael",
-      "restaurante" : "Boston",
-      "comida" : "hamburguer",
-      "valor": 42.3,
-      "qtd" : 1
-    },
-    {
-      "id": 1,
-      "usuario":"ismael",
-      "restaurante" : "Boston",
-      "comida" : "hamburguer",
-      "valor": 42.3,
-      "qtd" : 1
-    },
-    {
-      "id": 1,
-      "usuario":"ismael",
-      "restaurante" : "Boston",
-      "comida" : "hamburguer",
-      "valor": 42.3,
-      "qtd" : 1
+      "id": 3,
+      "usuario": "ismael",
+      "restaurante": "Boston",
+      "comida": "hamburguer3",
+      "valor": 30,
+      "total": 90,
+      "qtd": "3"
     }
   ]
-  
 }

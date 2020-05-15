@@ -14,3 +14,24 @@ ion-back-button{
     margin: 5px;
     --background: #EAEAEA;
 }
+
+.list-pedido{
+    position: relative;
+}
+
+.list-pedido li{
+    float: left;
+    list-style: none;
+    margin: 0 5px;
+}
+
+.list-pedido ul {
+    margin: 0;
+    padding: 0;
+}
+
+ion-item{
+    --background: #EAEAEA;
+    border-bottom: 1px solid #FF3838;
+}
+
