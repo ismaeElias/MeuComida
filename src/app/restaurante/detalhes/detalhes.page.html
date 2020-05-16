@@ -11,7 +11,7 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col  (click)="navegarComida()">
+      <ion-col  [routerLink]="['/restaurante/detalhes/comida', restaurante.id]">
         <p id="comida"><ion-icon name="fast-food"></ion-icon></p>
       </ion-col>
       <ion-col  [routerLink]="['/restaurante/detalhes/avaliacao', restaurante.id]"> 

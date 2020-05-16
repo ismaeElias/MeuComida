@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ComidaDetailPageRoutingModule } from './comida-routing.module';
+import { DetalhesPageRoutingModule } from './detalhes-routing.module';
 
-import { ComidaPage } from './comida.page';
+import { DetalhesPage } from './detalhes.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComidaDetailPageRoutingModule
+    DetalhesPageRoutingModule
   ],
-  declarations: [ComidaPage]
+  declarations: [DetalhesPage]
 })
-export class ComidaPageModule {}
+export class DetalhesPageModule {}

@@ -116,6 +116,6 @@ export class DetalhesPage implements OnInit {
 
   sair(){
     this.navController.navigateForward(['/detalhes']);
-  }
+  } 
 
 }

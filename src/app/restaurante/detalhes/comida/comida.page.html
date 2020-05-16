@@ -1,12 +1,40 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="detalhes"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Comidas</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Comida</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content>
+  <ion-content class="ion-padding">
+    <ion-button routerLink="./cadastro-comida" (click)="showLoading()" expand="block" fill="outline">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Adicionar
+    </ion-button>
 
-</ion-content>
+    <ion-list>
+       <ion-item class="av-item" *ngFor="let comida of comida" >
+        <ion-card style="width: 100%;">
+          <ion-card-header>
+            <ion-card-title>{{comida.nome}}</ion-card-title>
+            <ion-label>
+              <ion-icon name="clipboard"></ion-icon>{{comida.urlImagem}}
+            </ion-label>
+          </ion-card-header>
+          <ion-card-content>
+            {{comida.detalhes}}
+          </ion-card-content>
+          <ion-button class="btn-detalhes" expand="full" [routerLink]="['/restaurante/detalhes/comida/cadastro-comida',comida.id]">
+            <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>Ver detalhes
+          </ion-button>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+
+  </ion-footer>
+</ion-app>

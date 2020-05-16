@@ -77,6 +77,19 @@
       "usuario": "artur",
       "senha": "1",
       "id": 6
+    },
+    {
+      "pessoaJuridica": true,
+      "nome": "",
+      "telefone": "",
+      "CPF": "",
+      "email": "",
+      "endereco": "",
+      "numResidencia": 0,
+      "bairro": "",
+      "usuario": "2",
+      "senha": "2",
+      "id": 7
     }
   ],
   "restaurante": [
@@ -119,6 +132,16 @@
       "classificacao": 0,
       "urlImagem": "",
       "id": 6
+    },
+    {
+      "razaoSocial": "22",
+      "telefoneContato": "",
+      "detalhes": "",
+      "segmento": "Pizzaria",
+      "nivelValor": "alto_1",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 7
     }
   ],
   "avaliacao": [
@@ -166,7 +189,7 @@
       "nome": "Ismael Elias",
       "usuario": "ismael",
       "restaurante": "Estação Lanches",
-      "comentario": "É BOM",
+      "comentario": "TESTEEEE",
       "nota": 5,
       "id": 10
     },
@@ -179,63 +202,76 @@
       "id": 11
     },
     {
-      "nome": "Ismael Elias",
-      "usuario": "ismael",
+      "nome": "a",
+      "usuario": "a",
       "restaurante": "Estação Lanches",
-      "comentario": "bom mesmo",
-      "nota": 5,
+      "comentario": "",
+      "nota": 3,
       "id": 12
-    },
-    {
-      "nome": "Ismael Elias",
-      "usuario": "ismael",
-      "restaurante": "Estação Lanches",
-      "comentario": "bao",
-      "nota": 2,
-      "id": 13
-    },
-    {
-      "nome": "Ismael Elias",
-      "usuario": "ismael",
-      "restaurante": "Estação Lanches",
-      "comentario": "bom",
-      "nota": 3,
-      "id": 14
-    },
-    {
-      "nome": "Ismael Elias",
-      "usuario": "ismael",
-      "restaurante": "Boston",
-      "comentario": "teste",
-      "nota": 3,
-      "id": 15
-    },
-    {
-      "nome": "Ismael Elias",
-      "usuario": "ismael",
-      "restaurante": "Hamburguer bao",
-      "comentario": "bao",
-      "nota": 4,
-      "id": 16
-    },
-    {
-      "nome": "Ismael Elias",
-      "usuario": "ismael",
-      "restaurante": "Hamburguer bao",
-      "comentario": "gostei",
-      "nota": 3,
-      "id": 17
     }
   ],
   "pedidos": [
     {
+      "id": 1,
+      "usuario": "ismael",
+      "restaurante": "Boston",
+      "comida": "hamburguer",
+      "valor": 30,
+      "total": 30,
+      "qtd": "1"
+    },
+    {
+      "id": 2,
+      "usuario": "ismael",
+      "restaurante": "Boston",
+      "comida": "hamburguer",
+      "valor": 30,
+      "total": 30,
+      "qtd": "1"
+    },
+    {
       "id": 3,
       "usuario": "ismael",
       "restaurante": "Boston",
-      "comida": "hamburguer3",
+      "comida": "hamburguer",
       "valor": 30,
       "total": 90,
       "qtd": "3"
+    }
+  ],
+  "comida": [
+    {
+      "itens_composicao": "",
+      "nome": "1",
+      "detalhes": "",
+      "tipo": "Pizzaria",
+      "popularidade": "",
+      "valor": 0,
+      "urlImagem": "",
+      "restauranteId": "detalhes",
+      "id": 1
+    },
+    {
+      "itens_composicao": "",
+      "nome": "77",
+      "detalhes": "",
+      "tipo": "Pizzaria",
+      "popularidade": "",
+      "valor": 0,
+      "urlImagem": "",
+      "restauranteId": "detalhes",
+      "id": 2
+    },
+    {
+      "itens_composicao": "",
+      "nome": "33",
+      "detalhes": "333",
+      "tipo": "Pizzaria",
+      "popularidade": "",
+      "valor": 0,
+      "urlImagem": "33",
+      "restauranteId": "detalhes",
+      "id": 3
     }
   ]
 }

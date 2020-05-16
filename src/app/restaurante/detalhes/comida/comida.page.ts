@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ComidaService } from './comida.service';
+import { LoadingController, AlertController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { RestauranteService } from '../../restaurante.service';
 
 @Component({
   selector: 'app-comida',
@@ -7,9 +12,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComidaPage implements OnInit {
 
-  constructor() { }
+  public loader;
 
-  ngOnInit() {
+  restaurante : Restaurante;
+
+  comida : Comida[];
+
+  constructor(
+    private comidaService: ComidaService,
+    public loadingController: LoadingController,
+    private activatedRoute : ActivatedRoute,
+    private restauranteService: RestauranteService,
+    private navController: NavController,
+    private router: Router,
+    private _alertCtrl: AlertController) 
+    {
+      this.restaurante = {
+        razaoSocial: '',
+        telefoneContato: '', 
+        detalhes: '', 
+        segmento: "Pizzaria", 
+        nivelValor: "medio",
+        classificacao: 0, urlImagem: ''
+      }
+    }
+
+
+  showLoading() {
+    this.loadingController
+      .create({
+        message: 'Aguarde...',
+        spinner: "crescent"
+      })
+      .then((loading) => {
+        loading.present();
+        setTimeout(() => loading.dismiss(), 1000);
+      });
+  }
+
+  async ngOnInit() {
+    const id = parseInt(this.activatedRoute.snapshot.params['id']);
+    this.restauranteService.buscaRes(id).subscribe((data)=>{
+      this.restaurante = data
+      this.comidaService.getComidaRestaurante(this.restaurante.razaoSocial).subscribe((res)=>{
+        this.comida =  res
+      })
+    });
+  }
+  navDetalhes(){
+    this.router.navigate(['comida/detalhes'])
   }
 
 }

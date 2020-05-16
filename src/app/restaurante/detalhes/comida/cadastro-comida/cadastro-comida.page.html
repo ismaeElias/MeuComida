@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastre sua comida</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="comida"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <div class="dadosCadastro">
+    <h3>Informações do Cadastro</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label>Titulo:</ion-label>
+        <ion-input type="text" [(ngModel)]="comida.nome"></ion-input>
+      </ion-item>
+
+      <!--<ion-item>
+        <ion-label>Valor</ion-label>
+        <ion-select placeholder="Selecione" [(ngModel)]="comida.nivelValor" [ngModelOptions]="{standalone: true}">
+          <ion-select-option value="baixo_1">R$01 - 20</ion-select-option>
+          <ion-select-option value="baixo_2">R$20 - 30</ion-select-option>
+          <ion-select-option value="medio">R$30 - 40</ion-select-option>
+          <ion-select-option value="alto_1">R$50 - 80</ion-select-option>
+          <ion-select-option value="alto_2">Maior de R$80</ion-select-option>
+        </ion-select>
+      </ion-item>-->
+
+      <ion-item>
+        <ion-label>Imagem</ion-label>
+        <ion-input type="text" [(ngModel)]="comida.urlImagem"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Detalhes:</ion-label>
+        <ion-textarea clearOnEdit="true" type="text" [(ngModel)]="comida.detalhes"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list class="finalizarCadastro">
+      <ion-item>
+        <ion-button (click)="salvar()">Cadastrar</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>  
