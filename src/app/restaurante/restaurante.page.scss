@@ -3,6 +3,10 @@ ion-toolbar{
     color: white;
 }
 
+ion-label{
+    padding: 5px;;
+}
+
 ion-button{
     --background:#FF3838;
     --border-color: none;
@@ -19,3 +23,30 @@ ion-card{
     margin: 0;
     border-radius: 0px;
 }
+
+.img-restaurante{
+    // padding-top: 15% ;
+    // height: 60px;
+    // width: 60px;
+    // display: block;
+    vertical-align: middle;
+    // border-radius: 50%;
+}
+
+
+.img-restaurante2{
+    display: block;
+    max-width:55px;
+    max-height:55px;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+}
+
+.img-round{
+    border-radius: 50%;
+}
+
+.avatar{
+    margin: auto;
+ }

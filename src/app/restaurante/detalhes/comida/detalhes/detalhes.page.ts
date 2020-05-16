@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoadingController, NavController, AlertController, ToastController } from '@ionic/angular';
 import { ComidaService } from '../comida.service';
+import { RestauranteService } from 'src/app/restaurante/restaurante.service';
 
 @Component({
   selector: 'app-detalhes',
@@ -12,12 +13,13 @@ export class DetalhesPage implements OnInit {
  
   comida : Comida;
 
-  
+  editButton: boolean;
   edit : boolean;
   hideMe: boolean;
 
   
   constructor(  private comidaService: ComidaService,
+                private restauranteService: RestauranteService,
                 private activatedRoute : ActivatedRoute,
                 private router: Router,
                 private loadingController : LoadingController,
@@ -27,11 +29,11 @@ export class DetalhesPage implements OnInit {
       this.comida = {
         itens_composicao: '',
         nome: '', 
-        restaurante: '',
+        
         usuario:'',
         detalhes: '', 
         tipo: "Pizzaria",
-        popularidade: '', 
+        popularidade: 0, 
         valor: 0,
         urlImagem: ''
       }
@@ -39,7 +41,8 @@ export class DetalhesPage implements OnInit {
 
 
   async ngOnInit() {
-    const id = parseInt(this.activatedRoute.snapshot.params['id']);     /*  
+    this.editButton = true;
+    const id = parseInt(this.activatedRoute.snapshot.params['id']);     
     if(id) {
       // Carregar as informações
       const loading = await this.loadingController.create({message: 'Carregando'});
@@ -48,20 +51,24 @@ export class DetalhesPage implements OnInit {
         this.comida = comida;
         loading.dismiss();
       });
-    } */
+    } 
   }
 
   editar(){
     this.edit = true;
     this.hideMe = true;
+    this.editButton = false;
   }
 
   async salvarEdicao(){
+    const restaurante= this.restauranteService.obtemRestauranteLogado();
     this.edit = false;
     this.hideMe = false;
     let loading = await this.loadingController.create({message:'Salvando'});
     loading.present();
     this.comidaService.salvar(this.comida).subscribe(() => {loading.dismiss();this.ngOnInit();});
+
+    this.navController.navigateForward(['restaurante/detalhes/comida/'+restaurante.id])
   }
 
   async confirmarExclusao(comida: Comida) {
@@ -82,13 +89,18 @@ export class DetalhesPage implements OnInit {
   }
 
   excluir(comida: Comida) {
+
+    const restaurante= this.restauranteService.obtemRestauranteLogado();
+
     this.comidaService.excluir(comida).subscribe( async () => {
-      this.navController.navigateForward(['/comida'])  
+      this.navController.navigateForward(['restaurante/detalhes/comida/'+restaurante.id])
         const toast = await this.toastController.create({
           message: 'Comida excluída com sucesso!',
           duration: 2000
         });
+       
         toast.present();
+        
     });
   }
 

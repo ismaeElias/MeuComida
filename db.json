@@ -98,9 +98,9 @@
       "telefoneContato": "(48) 99684-3422",
       "detalhes": "Pizzas e Porções",
       "segmento": "Pizzaria",
-      "nivelValor": "alto_2",
+      "nivelValor": "baixo_1",
       "classificacao": 0,
-      "urlImagem": "",
+      "urlImagem": "https://www.itacareparadise.com.br/wp-content/uploads/2018/07/7-comidas-típicas-do-litoral-baiano-As-delícias-da-culinária-nordestina.jpg",
       "id": 1
     },
     {
@@ -142,6 +142,26 @@
       "classificacao": 0,
       "urlImagem": "",
       "id": 7
+    },
+    {
+      "razaoSocial": "",
+      "telefoneContato": "",
+      "detalhes": "",
+      "segmento": "Pizzaria",
+      "nivelValor": "baixo_1",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 8
+    },
+    {
+      "razaoSocial": "teste",
+      "telefoneContato": "",
+      "detalhes": "",
+      "segmento": "Hamburgueria",
+      "nivelValor": "alto_2",
+      "classificacao": 0,
+      "urlImagem": "",
+      "id": 9
     }
   ],
   "avaliacao": [
@@ -241,37 +261,104 @@
   ],
   "comida": [
     {
+      "itens_composicao": "dddd",
+      "nome": "1123123",
+      "restaurante": "",
+      "usuario": "",
+      "detalhes": "123213213213",
+      "tipo": "Pizzaria",
+      "popularidade": "",
+      "valor": 0,
+      "urlImagem": "dsasdsadsad",
+      "restauranteId": 1,
+      "id": 13
+    },
+    {
       "itens_composicao": "",
-      "nome": "1",
+      "nome": "",
+      "restaurante": "",
+      "usuario": "",
       "detalhes": "",
       "tipo": "Pizzaria",
       "popularidade": "",
       "valor": 0,
       "urlImagem": "",
-      "restauranteId": "detalhes",
-      "id": 1
+      "restauranteId": 1,
+      "id": 14
     },
     {
       "itens_composicao": "",
-      "nome": "77",
-      "detalhes": "",
+      "nome": "qwe",
+      "restaurante": "",
+      "usuario": "",
+      "detalhes": "w",
       "tipo": "Pizzaria",
       "popularidade": "",
       "valor": 0,
       "urlImagem": "",
-      "restauranteId": "detalhes",
-      "id": 2
+      "restauranteId": 1,
+      "id": 15
     },
     {
       "itens_composicao": "",
-      "nome": "33",
-      "detalhes": "333",
+      "nome": "www",
+      "restaurante": "",
+      "usuario": "",
+      "detalhes": "w",
       "tipo": "Pizzaria",
       "popularidade": "",
       "valor": 0,
-      "urlImagem": "33",
+      "urlImagem": "",
+      "restauranteId": 1,
+      "id": 16
+    },
+    {
       "restauranteId": "detalhes",
-      "id": 3
+      "itens_composicao": "",
+      "nome": "scheffer",
+      "usuario": "",
+      "detalhes": "aaa",
+      "tipo": "Pizzaria",
+      "popularidade": "",
+      "valor": 0,
+      "urlImagem": "aa",
+      "id": 17
+    },
+    {
+      "restauranteId": 2,
+      "itens_composicao": "",
+      "nome": "gostos hummm 2",
+      "usuario": "",
+      "detalhes": "asdjjj",
+      "tipo": "Pizzaria",
+      "popularidade": "",
+      "valor": 0,
+      "urlImagem": "asd",
+      "id": 18
+    },
+    {
+      "restauranteId": 1,
+      "itens_composicao": "marionese, carne, e tudo que há de bom",
+      "nome": "sadsad",
+      "usuario": "",
+      "detalhes": "sdas",
+      "tipo": "Salgada",
+      "popularidade": 2,
+      "valor": 10000,
+      "urlImagem": "",
+      "id": 19
+    },
+    {
+      "restauranteId": 1,
+      "itens_composicao": "",
+      "nome": "",
+      "usuario": "",
+      "detalhes": "",
+      "tipo": "Pizzaria",
+      "popularidade": 3,
+      "valor": 0,
+      "urlImagem": "",
+      "id": 20
     }
   ]
 }

@@ -14,28 +14,31 @@ export class ComidaPage implements OnInit {
 
   public loader;
 
-  restaurante : Restaurante;
+  restaurante: Restaurante;
 
-  comida : Comida[];
+  comida: Comida[];
 
   constructor(
     private comidaService: ComidaService,
     public loadingController: LoadingController,
-    private activatedRoute : ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private restauranteService: RestauranteService,
     private navController: NavController,
     private router: Router,
-    private _alertCtrl: AlertController) 
-    {
-      this.restaurante = {
-        razaoSocial: '',
-        telefoneContato: '', 
-        detalhes: '', 
-        segmento: "Pizzaria", 
-        nivelValor: "medio",
-        classificacao: 0, urlImagem: ''
-      }
+    private _alertCtrl: AlertController) {
+    this.restaurante = {
+      razaoSocial: '',
+      telefoneContato: '',
+      detalhes: '',
+      segmento: "Pizzaria",
+      nivelValor: "medio",
+      classificacao: 0, urlImagem: ''
     }
+  }
+
+  ionViewWillEnter() {
+    this.getComida()
+  }
 
 
   showLoading() {
@@ -50,16 +53,20 @@ export class ComidaPage implements OnInit {
       });
   }
 
-  async ngOnInit() {
+  getComida() {
     const id = parseInt(this.activatedRoute.snapshot.params['id']);
-    this.restauranteService.buscaRes(id).subscribe((data)=>{
+    this.restauranteService.buscaRes(id).subscribe((data) => {
       this.restaurante = data
-      this.comidaService.getComidaRestaurante(this.restaurante.razaoSocial).subscribe((res)=>{
-        this.comida =  res
+      this.comidaService.getComidaRestaurante(this.restaurante.id).subscribe((res) => {
+        this.comida = res
       })
     });
   }
-  navDetalhes(){
+
+  async ngOnInit() {
+    this.getComida()
+  }
+  navDetalhes() {
     this.router.navigate(['comida/detalhes'])
   }
 

@@ -28,4 +28,27 @@ p{
 ion-icon{
     width: 20px;
     height: 20px;
-  }
+}
+
+#btn-Editar{
+    --border-color: #FF3838;
+    color: #FF3838;
+    --background: transparent;
+}
+
+#btn-excluir{
+    --background: #FF3838;
+    color: white;
+    width: 170px;
+}
+
+#btn-EditSave{
+    --background: #FF3838;
+    color: white;
+}
+
+h3{
+    text-align: center;
+    font-weight: bold;
+    color: #FF3838;
+}

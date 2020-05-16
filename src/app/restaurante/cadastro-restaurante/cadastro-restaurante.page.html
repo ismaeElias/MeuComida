@@ -8,8 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" >
-  <div class="dadosPessoais">
-    <h3>Informações do Cadastro</h3>
+  <div class="dadosRestaurante">
     <ion-list>
       <ion-item>
         <ion-label>Razão Social:</ion-label>
@@ -48,11 +47,9 @@
         <ion-textarea clearOnEdit="true" type="text" [(ngModel)]="restaurante.detalhes"></ion-textarea>
       </ion-item>
     </ion-list>
-    
-    <ion-list class="finalizarCadastro">
-      <ion-item>
-        <ion-button (click)="salvar()">Cadastrar</ion-button>
-      </ion-item>
-    </ion-list>
+
+    <ion-button id="btn-EditSave" (click)="salvar()"> 
+      <ion-icon name="checkmark-done-outline" slot="end"></ion-icon>Cadastrar
+    </ion-button>
   </div>
 </ion-content>  
