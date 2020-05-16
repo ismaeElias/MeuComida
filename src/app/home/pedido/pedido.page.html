@@ -6,7 +6,11 @@
     <ion-title>Meu Pedidos</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="qntIem()">
+    <p>{{qntPedido}}</p>
+  </ion-fab-button>
+</ion-fab>
 <ion-content>
   <ion-list lines="full">
     <ion-item-sliding  *ngFor="let ped of pedido">
@@ -33,9 +37,16 @@
     </ion-item-options>
     </ion-item-sliding> 
   </ion-list>
-  <ion-list>
-    <ion-item>
-      <p>Total dos pedidos a pagar: {{total | currency:'BRL'}}</p>
-    </ion-item>
-  </ion-list>
+  
+  
 </ion-content>
+<ion-footer >
+  <ion-toolbar>
+    <ion-list class="rodape">
+      <ion-item>
+        <p>Total dos pedidos a pagar: {{total | currency:'BRL'}}</p>
+        <ion-button fill="outline">Finalizar Pedido</ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-toolbar>
+</ion-footer>

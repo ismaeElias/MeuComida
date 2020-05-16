@@ -35,3 +35,25 @@ ion-item{
     border-bottom: 1px solid #FF3838;
 }
 
+
+.rodape ion-item{
+    --background: #FF3838;
+}
+
+.rodape p{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.rodape ion-button{
+    --color:white;
+    height: 40px;
+}
+
+
+ion-fab-button{
+    margin-top: 15px;
+    --background:white;
+    --color:#FF3838;
+}

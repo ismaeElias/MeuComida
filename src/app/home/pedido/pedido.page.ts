@@ -16,7 +16,7 @@ export class PedidoPage implements OnInit {
   pedido : Pedidos[];
   total : number;
   ped : Pedidos;
-
+  qntPedido : number;
   constructor(private usuarioService : UsuarioService,
     private loadingController : LoadingController,
     private activatedRoute : ActivatedRoute,
@@ -40,6 +40,7 @@ export class PedidoPage implements OnInit {
           this.pedido = pedidos
           const valor = this.pedido.reduce((prev, elem)=> prev + elem.total,0);
           this.total = valor;
+          this.qntPedido = this.pedido.length;
           
         })
         loading.dismiss();
@@ -77,5 +78,13 @@ export class PedidoPage implements OnInit {
       this.ngOnInit();
       busyLoader.dismiss();
     });
+  }
+
+  async qntIem(){
+     const toast = await this.toastController.create({
+          message: `Você tem ${this.qntPedido} pedidos`,
+          duration: 2000
+        });
+        toast.present();
   }
 }
