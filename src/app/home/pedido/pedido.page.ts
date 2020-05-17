@@ -17,6 +17,9 @@ export class PedidoPage implements OnInit {
   total : number;
   ped : Pedidos;
   qntPedido : number;
+  botao : boolean;
+
+
   constructor(private usuarioService : UsuarioService,
     private loadingController : LoadingController,
     private activatedRoute : ActivatedRoute,
@@ -41,15 +44,20 @@ export class PedidoPage implements OnInit {
           const valor = this.pedido.reduce((prev, elem)=> prev + elem.total,0);
           this.total = valor;
           this.qntPedido = this.pedido.length;
-          
+          if(this.pedido.length > 0){
+            this.botao = false;
+          }else{
+            this.botao = true;
+          }
         })
         loading.dismiss();
       });
-    } 
+    }
+    
     
   }
 
-  ionViewWillEnter() {
+  ionViewWillEnter() {  
     this.ngOnInit()
   }
 
@@ -69,7 +77,7 @@ export class PedidoPage implements OnInit {
     alerta.present();
   }
 
-
+z
   private async excluir(ped: Pedidos) {
     const busyLoader = await this.loadingController.create({ message: 'Excluíndo...' });
     busyLoader.present();
@@ -86,5 +94,30 @@ export class PedidoPage implements OnInit {
           duration: 2000
         });
         toast.present();
+  }
+
+  async finalizar(){
+    const max = this.pedido.length;
+    this.pedido.forEach((elem)=>{
+      this.pedidosService.excluirTodos(elem.id).subscribe(()=>{
+        let counter = 0;
+        let timer = setInterval(function() {
+          if( counter >=  max) {
+            clearInterval( timer );
+            
+          }
+          counter++ 
+        }, 500);
+         
+        this.ngOnInit();
+      })
+      
+    })
+    const alerta = await this.alertController.create({
+      header: 'Pedidos finalizados!',
+      message: 'Seu pedido em breve chegará, navegue avalie os restaurante e veja as novidades!',
+      buttons: ['Confirmar']
+    });
+    alerta.present();
   }
 }

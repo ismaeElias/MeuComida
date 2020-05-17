@@ -22,6 +22,10 @@ export class PedidosService {
     return this.httpClient.put<Pedidos>(`http://localhost:3000/pedidos/${pedido.id}`, pedido);
   }
 
+  adicionar(pedido : Pedidos){
+    return this.httpClient.post<Pedidos>('http://localhost:3000/pedidos', pedido);
+  }
+
   getPed(id : number){
     return this.httpClient.get<Pedidos>(`http://localhost:3000/pedidos/${id}`);
   }
@@ -30,11 +34,15 @@ export class PedidosService {
     if (pedido && pedido.id) {
       return this.atualizaQtd(pedido);
     } else {
-      return alert('não atualizou')
+      return this.adicionar(pedido);
     } 
   }
 
   excluir(pedido: Pedidos) {
     return this.httpClient.delete(`http://localhost:3000/pedidos/${pedido.id}`);
+  }
+
+  excluirTodos(id: number) {
+    return this.httpClient.delete(`http://localhost:3000/pedidos/${id}`);
   }
 }

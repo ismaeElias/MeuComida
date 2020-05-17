@@ -39,6 +39,7 @@ export class HomePage {
   }
   
   async ngOnInit(){
+    
     const id_user = this.usuarioService.obtemUsuarioLogado();
     const id = id_user[0].id;  
     if(id) {

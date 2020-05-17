@@ -20,7 +20,7 @@ export class ComidaService {
 
   getComidas() {
     return new Promise(resolve => {
-      this.httpClient.get("http://localhost:3000/restaurante/detalhes/comida/").subscribe(data => {
+      this.httpClient.get("http://localhost:3000/comida/").subscribe(data => {
         resolve(data);
       },
         err => {
@@ -30,7 +30,7 @@ export class ComidaService {
   }
 
   adicionar(comida: Comida) {
-    return this.httpClient.post<Comida>('http://localhost:3000/restaurante/detalhes/comida', comida);
+    return this.httpClient.post<Comida>('http://localhost:3000/comida', comida);
   }
 
   salvar(comida: Comida) {
@@ -42,24 +42,24 @@ export class ComidaService {
   }
 
   atualizar(comida: Comida) {
-    return this.httpClient.put<Comida>(`http://localhost:3000/restaurante/detalhes/comida/${comida.id}`, comida);
+    return this.httpClient.put<Comida>(`http://localhost:3000/comida/${comida.id}`, comida);
   }
 
   
-  getComidaRestaurante(res: String){
-    return this.httpClient.get<Comida[]>(`http://localhost:3000/comida?restaurante=${res}`);
+  getComidaRestaurante(id: number){
+    return this.httpClient.get<Comida[]>(`http://localhost:3000/comida?restauranteId=${id}`);
 
     
   }
 
   buscaComida(id : number){
-    return this.httpClient.get<Comida>(`http://localhost:3000/restaurante/detalhes/comida${id}`).pipe(tap(
+    return this.httpClient.get<Comida>(`http://localhost:3000/comida/${id}`).pipe(tap(
       (comida: Comida) => this._comidaLogado = comida)
      )
   }
 
   excluir(comida: Comida) {
-    return this.httpClient.delete(`http://localhost:3000/restaurante/detalhes/comida/${comida.id}`);
+    return this.httpClient.delete(`http://localhost:3000/comida/${comida.id}`);
   }
 
 }

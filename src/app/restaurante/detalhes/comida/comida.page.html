@@ -15,20 +15,35 @@
     </ion-button>
 
     <ion-list>
-       <ion-item class="av-item" *ngFor="let comida of comida" >
+      <ion-item class="av-item" *ngFor="let comida of comida">
+
         <ion-card style="width: 100%;">
-          <ion-card-header>
-            <ion-card-title>{{comida.nome}}</ion-card-title>
-            <ion-label>
-              <ion-icon name="clipboard"></ion-icon>{{comida.urlImagem}}
-            </ion-label>
-          </ion-card-header>
-          <ion-card-content>
-            {{comida.detalhes}}
-          </ion-card-content>
-          <ion-button class="btn-detalhes" expand="full" [routerLink]="['/restaurante/detalhes/comida/cadastro-comida',comida.id]">
-            <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>Ver detalhes
-          </ion-button>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="3">
+                <ion-avatar>
+                  <img draggable="false" *ngIf="comida.urlImagem != ''" [src]="comida.urlImagem">
+                  <img draggable="false" *ngIf="comida.urlImagem == ''"
+                    src="https://i.dlpng.com/static/png/1181061_preview_preview.png">
+                </ion-avatar>
+              </ion-col>
+              <ion-col>
+                <ion-card-header>
+                  <ion-card-title>{{comida.nome}}</ion-card-title>
+                  <!-- <ion-label>
+                  <ion-icon name="clipboard"></ion-icon>{{comida.urlImagem}}
+                </ion-label> -->
+                </ion-card-header>
+                <ion-card-content>
+                  {{comida.detalhes}}
+                </ion-card-content>
+              </ion-col>
+              <ion-button class="btn-detalhes" expand="full"
+                [routerLink]="['/restaurante/detalhes/comida/detalhes',comida.id]">
+                <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>Ver detalhes
+              </ion-button>
+            </ion-row>
+          </ion-grid>
         </ion-card>
       </ion-item>
     </ion-list>

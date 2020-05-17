@@ -37,15 +37,16 @@
     </ion-item-options>
     </ion-item-sliding> 
   </ion-list>
-  
+  <div *ngIf="botao" class="img"></div>
+  <h1 *ngIf="botao">Sem pedidos cadastrados :( </h1>
   
 </ion-content>
 <ion-footer >
   <ion-toolbar>
     <ion-list class="rodape">
-      <ion-item>
+      <ion-item >
         <p>Total dos pedidos a pagar: {{total | currency:'BRL'}}</p>
-        <ion-button fill="outline">Finalizar Pedido</ion-button>
+        <ion-button fill="outline" [disabled]="botao" (click)="finalizar()">Finalizar Pedido</ion-button>
       </ion-item>
     </ion-list>
   </ion-toolbar>

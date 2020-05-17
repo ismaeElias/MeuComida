@@ -98,9 +98,9 @@
       "telefoneContato": "(48) 99684-3422",
       "detalhes": "Pizzas e Porções",
       "segmento": "Pizzaria",
-      "nivelValor": "alto_2",
+      "nivelValor": "baixo_1",
       "classificacao": 0,
-      "urlImagem": "",
+      "urlImagem": "https://www.itacareparadise.com.br/wp-content/uploads/2018/07/7-comidas-típicas-do-litoral-baiano-As-delícias-da-culinária-nordestina.jpg",
       "id": 1
     },
     {
@@ -132,16 +132,6 @@
       "classificacao": 0,
       "urlImagem": "",
       "id": 6
-    },
-    {
-      "razaoSocial": "22",
-      "telefoneContato": "",
-      "detalhes": "",
-      "segmento": "Pizzaria",
-      "nivelValor": "alto_1",
-      "classificacao": 0,
-      "urlImagem": "",
-      "id": 7
     }
   ],
   "avaliacao": [
@@ -162,22 +152,6 @@
       "id": 3
     },
     {
-      "nome": "a",
-      "usuario": "a",
-      "restaurante": "Estação Lanches",
-      "comentario": "asdas",
-      "nota": 3,
-      "id": 6
-    },
-    {
-      "nome": "Ismael Elias",
-      "usuario": "ismael",
-      "restaurante": "Boston",
-      "comentario": "Avaliacao 2",
-      "nota": 4,
-      "id": 8
-    },
-    {
       "nome": "diana",
       "usuario": "diana",
       "restaurante": "Estação Lanches",
@@ -186,92 +160,55 @@
       "id": 9
     },
     {
-      "nome": "Ismael Elias",
-      "usuario": "ismael",
-      "restaurante": "Estação Lanches",
-      "comentario": "TESTEEEE",
-      "nota": 5,
-      "id": 10
-    },
-    {
       "nome": "fabio",
       "usuario": "fabio",
       "restaurante": "Estação Lanches",
       "comentario": "bom",
       "nota": 2,
       "id": 11
-    },
-    {
-      "nome": "a",
-      "usuario": "a",
-      "restaurante": "Estação Lanches",
-      "comentario": "",
-      "nota": 3,
-      "id": 12
     }
   ],
   "pedidos": [
     {
-      "id": 1,
-      "usuario": "ismael",
-      "restaurante": "Boston",
-      "comida": "hamburguer",
-      "valor": 30,
-      "total": 30,
-      "qtd": "1"
+      "usuario": "diana",
+      "restaurante": "Estação Lanches",
+      "comida": "Hamburguer",
+      "valor": 18,
+      "qtd": 1,
+      "total": 18,
+      "id": 3
     },
     {
-      "id": 2,
       "usuario": "ismael",
-      "restaurante": "Boston",
-      "comida": "hamburguer",
-      "valor": 30,
-      "total": 30,
-      "qtd": "1"
+      "restaurante": "Estação Lanches",
+      "comida": "Hamburguer",
+      "valor": 18,
+      "qtd": 1,
+      "total": 18,
+      "id": 4
     },
     {
-      "id": 3,
       "usuario": "ismael",
-      "restaurante": "Boston",
-      "comida": "hamburguer",
-      "valor": 30,
-      "total": 60,
-      "qtd": "2"
+      "restaurante": "Estação Lanches",
+      "comida": "Hamburguer",
+      "valor": 18,
+      "qtd": "3",
+      "total": 54,
+      "id": 5
     }
   ],
   "comida": [
     {
-      "itens_composicao": "",
-      "nome": "1",
-      "detalhes": "",
-      "tipo": "Pizzaria",
-      "popularidade": "",
-      "valor": 0,
+      "restauranteId": 1,
+      "itens_composicao": "Pão, tomate, carne",
+      "nome": "Hamburguer",
+      "usuario": "",
+      "detalhes": "Pode ter outros tipos de salada",
+      "tipo": "Salgada",
+      "popularidade": 5,
+      "valor": 18,
       "urlImagem": "",
-      "restauranteId": "detalhes",
-      "id": 1
-    },
-    {
-      "itens_composicao": "",
-      "nome": "77",
-      "detalhes": "",
-      "tipo": "Pizzaria",
-      "popularidade": "",
-      "valor": 0,
-      "urlImagem": "",
-      "restauranteId": "detalhes",
-      "id": 2
-    },
-    {
-      "itens_composicao": "",
-      "nome": "33",
-      "detalhes": "333",
-      "tipo": "Pizzaria",
-      "popularidade": "",
-      "valor": 0,
-      "urlImagem": "33",
-      "restauranteId": "detalhes",
-      "id": 3
+      "id": 19
     }
   ]
 }
