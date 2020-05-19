@@ -4,6 +4,7 @@ import { LoadingController, AlertController, NavController } from '@ionic/angula
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { RestauranteService } from '../../restaurante.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-comida',
@@ -15,6 +16,8 @@ export class ComidaPage implements OnInit {
   public loader;
 
   restaurante: Restaurante;
+  
+  addButton: boolean;
 
   comida: Comida[];
 
@@ -24,6 +27,7 @@ export class ComidaPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private restauranteService: RestauranteService,
     private navController: NavController,
+    private usuarioService: UsuarioService,
     private router: Router,
     private _alertCtrl: AlertController) {
     this.restaurante = {
@@ -55,6 +59,10 @@ export class ComidaPage implements OnInit {
 
   getComida() {
     const id = parseInt(this.activatedRoute.snapshot.params['id']);
+    const user = this.usuarioService.obtemUsuarioLogado();
+    if(user){
+      this.addButton = user[0].pessoaJuridica;
+    }
     this.restauranteService.buscaRes(id).subscribe((data) => {
       this.restaurante = data
       this.comidaService.getComidaRestaurante(this.restaurante.id).subscribe((res) => {

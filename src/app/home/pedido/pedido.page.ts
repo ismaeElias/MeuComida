@@ -107,7 +107,7 @@ z
             
           }
           counter++ 
-        }, 500);
+        }, 1000);
          
         this.ngOnInit();
       })
