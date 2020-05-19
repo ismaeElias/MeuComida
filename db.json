@@ -90,6 +90,19 @@
       "usuario": "2",
       "senha": "2",
       "id": 7
+    },
+    {
+      "pessoaJuridica": false,
+      "nome": "Diana",
+      "telefone": "111111111",
+      "CPF": "11111111",
+      "email": "111111111111111111111",
+      "endereco": "sadSD",
+      "numResidencia": 11,
+      "bairro": "cdsa",
+      "usuario": "12345",
+      "senha": "12345",
+      "id": 8
     }
   ],
   "restaurante": [
@@ -166,6 +179,14 @@
       "comentario": "bom",
       "nota": 2,
       "id": 11
+    },
+    {
+      "nome": "Diana",
+      "usuario": "12345",
+      "restaurante": "Estação Lanches",
+      "comentario": "",
+      "nota": 0,
+      "id": 12
     }
   ],
   "pedidos": [
@@ -195,6 +216,24 @@
       "qtd": "3",
       "total": 54,
       "id": 5
+    },
+    {
+      "usuario": "12345",
+      "restaurante": "Estação Lanches",
+      "comida": "Hamburguer",
+      "valor": 18,
+      "qtd": 1,
+      "total": 18,
+      "id": 6
+    },
+    {
+      "usuario": "2",
+      "restaurante": "Estação Lanches",
+      "comida": "Hamburguer",
+      "valor": 18,
+      "qtd": 1,
+      "total": 18,
+      "id": 7
     }
   ],
   "comida": [

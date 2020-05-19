@@ -61,7 +61,6 @@ export class DetalhesPage implements OnInit {
 
 
   async ngOnInit() {
-    this.editButton = true;
     const id = parseInt(this.activatedRoute.snapshot.params['id']);     
     if(id) {
       // Carregar as informações
@@ -75,6 +74,10 @@ export class DetalhesPage implements OnInit {
         loading.dismiss();
       });
     } 
+
+    const usuario = this.usuarioService.obtemUsuarioLogado();
+    this.editButton = usuario[0].pessoaJuridica;
+
     const resLogado = this.restauranteService.obtemRestauranteLogado();
     const usuLogado = this.usuarioService.obtemUsuarioLogado();
     
